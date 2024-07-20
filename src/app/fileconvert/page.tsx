@@ -27,6 +27,8 @@ export default function Home() {
     const formData = new FormData();
     formData.append('file', file);
 
+    console.info(process.env.NEXT_PUBLIC_API_URL);
+
     try {
       const response = await fetch(process.env.NEXT_PUBLIC_API_URL as string+"/api/convert", {
         method: 'POST',
