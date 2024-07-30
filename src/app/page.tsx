@@ -1,113 +1,177 @@
+'use client'
+
 import Image from "next/image";
+import { useState, ChangeEvent, MouseEvent } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import WorkDetailRogue from "@/components/workdetailRogue";
+import WorkDetailParadise from "@/components/workdetailParadise";
+import WorkDetailSatelite from "@/components/workdetailSatelite";
+import WorkDetailLady from "@/components/workdetailLady";
+
+
+
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+
 
 export default function Home() {
+  const [selectTag, setselectTag] = useState(0);
+  const [selectWait, setSelectWait] = useState(false);
+
+  const handleClick = (num: number) => {
+
+    if (selectWait) return;
+
+    setSelectWait(true);
+
+    if (selectTag == num) {
+      setselectTag(0);
+    } else {
+      setselectTag(num);
+
+    }
+
+    setTimeout(() => {
+      setSelectWait(false);
+    }, 550);
+  };
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div>
+      <main className="flex min-h-screen flex-col bg-slate-200">
+        <motion.header
+          className="bg-slate-800 shadow w-full text-white"
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}>
+          <div className="flex mx-auto px-4 sm:px-6 lg:px-8">
+            <span className="flex-grow text-center h-16 flex items-center justify-start">
+              Kaiu Tomozawa's Portfolio
+            </span>
+            <span className="flex items-center justify-end ml-auto">
+              <NavigationMenu>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <NavigationMenuLink>Link</NavigationMenuLink>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger>うわああああ</NavigationMenuTrigger>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
+            </span>
+          </div>
+        </motion.header>
+
+        <div className="h-28 w-full">
         </div>
-      </div>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <div className="w-full h-full pl-20 pb-10 items-start font-mono text-6xl">
+          About
+        </div>
+        <div className="flex pb-20 items-center justify-center h-full">
+          <div className="w-full max-w-5xl px-10">
+            <div className="mb-10 ml-10 text-xl">
+              Name
+              <div className="ml-10 text-base">友澤 懐宇</div>
+            </div>
+            <div className="mb-10 ml-10 text-xl">
+              Introduction
+              <div className="ml-10 text-base">
+                中学生の頃からプログラミングを学び始め、個人ゲーム開発者として活動中。
+                主に使用するツールはUnity、Aseprite。近年はウェブ開発にも関心を抱いています。
+              </div>
+            </div>
+            <div className="mb-10 ml-10 text-xl">
+              Skill
+              <div className="ml-10 text-base">
+                C#,C++,Python(Django),JavaScript(Next.js)
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        <div className="w-full h-full pl-20 pb-10 items-start justify-between font-mono text-6xl">
+          Works
+        </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+        <div className="pb-16">
+          <div className="flex space-x-5 pb-5 items-center justify-center h-full ">
+            <Card className="w-[40%] max-w-md">
+              <CardHeader onClick={() => { handleClick(1) }}>
+                <CardTitle>ログ・ログ・ローグ</CardTitle>
+                <CardDescription>RPG</CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="w-[40%] max-w-md">
+              <CardHeader onClick={() => { handleClick(2) }}>
+                <CardTitle>PARADISE LOST</CardTitle>
+                <CardDescription>アクションRPG</CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+          <div className="flex space-x-5 pb-5 items-center justify-center h-full ">
+            <Card className="w-[40%] max-w-md">
+              <CardHeader onClick={() => { handleClick(3) }}>
+                <CardTitle>サテライディフェンス</CardTitle>
+                <CardDescription>タワーディフェンス</CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="w-[40%] max-w-md">
+              <CardHeader onClick={() => { handleClick(4) }}>
+                <CardTitle>Lady's taste</CardTitle>
+                <CardDescription>カードゲーム</CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+          <div className="text-center">
+            クリックすると詳細が表示されます
+          </div>
+
+        </div>
+
+        <AnimatePresence>
+          {selectTag === 1 && <WorkDetailRogue key="workDetailRogue" />}
+          {selectTag === 2 && <WorkDetailParadise key="workDetailParadise" />}
+          {selectTag === 3 && <WorkDetailSatelite key="workDetailSatelite" />}
+          {selectTag === 4 && <WorkDetailLady key="workDetailLady" />}
+        </AnimatePresence>
+
+        <div className="w-full h-full pl-20 py-20 items-start justify-between font-mono text-6xl">
+          Contact
+        </div>
+
+        <div className="flex pb-20 items-center justify-center h-full">
+          <div className="w-full max-w-5xl mb-10 text-xl text-center">
+            kaiutomozawa@gmail.com
+          </div>
+        </div>
+
+        <footer className="text-center">
+          <p>&copy; 2024 Kaiu Tomozawa. All Rights Reserved</p>
+        </footer>
+      </main>
+    </div>
   );
 }
