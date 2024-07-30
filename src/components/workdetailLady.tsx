@@ -16,8 +16,8 @@ const WorkDetailLady= () => {
             style={{ transformOrigin: 'top left' }}>
             
             <div className='w-[800px] mx-auto'>
-                <div className="pt-10 pb-10 text-center justify-between font-mono font-semibold text-3xl">
-                    Lady's taste
+                <div className="pt-10 pb-10 text-center justify-between font-mono font-semibold text-4xl">
+                    Lady&rsquo;s taste
                 </div>
 
                 <div className="flex w-full h-full justify-center space-x-10 pb-10">
