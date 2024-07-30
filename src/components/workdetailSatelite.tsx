@@ -23,7 +23,7 @@ const WorkDetailSatelite= () => {
                 <div className="flex w-full h-full justify-center space-x-10 pb-10">
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
-                            src="/worksimage/satelite/Satelite1.jpg"
+                            src="/images/satelite/Satelite1.jpg"
                             alt="Image 1"
                             width={256}
                             height={144}
@@ -31,7 +31,7 @@ const WorkDetailSatelite= () => {
                     </div>
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
-                            src="/worksimage/satelite/Satelite2.jpg"
+                            src="/images/satelite/Satelite2.jpg"
                             alt="Image 2"
                             width={256}
                             height={144}
@@ -39,7 +39,7 @@ const WorkDetailSatelite= () => {
                     </div>
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
-                            src="/worksimage/satelite/Satelite3.jpg"
+                            src="/images/satelite/Satelite3.jpg"
                             alt="Image 3"
                             width={256}
                             height={144}
@@ -50,7 +50,7 @@ const WorkDetailSatelite= () => {
                 <div className="flex w-full h-full justify-center space-x-10">
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
-                            src="/worksimage/satelite/Satelite4.jpg"
+                            src="/images/satelite/Satelite4.jpg"
                             alt="Image 4"
                             width={256}
                             height={144}
@@ -58,7 +58,7 @@ const WorkDetailSatelite= () => {
                     </div>
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
-                            src="/worksimage/satelite/Satelite5.jpg"
+                            src="/images/satelite/Satelite5.jpg"
                             alt="Image 5"
                             width={256}
                             height={144}

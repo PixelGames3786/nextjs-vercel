@@ -22,7 +22,7 @@ const WorkDetailRogue= () => {
                 <div className="flex w-full justify-center space-x-10">
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150">
                         <ImageWithSkeleton
-                            src="/worksimage/rogue/Rogue1.jpg"
+                            src="/images/rogue/Rogue1.jpg"
                             alt="Image 1"
                             width={144}
                             height={256}
@@ -30,7 +30,7 @@ const WorkDetailRogue= () => {
                     </div>
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150">
                         <ImageWithSkeleton
-                            src="/worksimage/rogue/Rogue2.jpg"
+                            src="/images/rogue/Rogue2.jpg"
                             alt="Image 2"
                             width={144}
                             height={256}
@@ -38,7 +38,7 @@ const WorkDetailRogue= () => {
                     </div>
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150">
                         <ImageWithSkeleton
-                            src="/worksimage/rogue/Rogue3.jpg"
+                            src="/images/rogue/Rogue3.jpg"
                             alt="Image 3"
                             width={144}
                             height={256}
@@ -46,7 +46,7 @@ const WorkDetailRogue= () => {
                     </div>
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150">
                         <ImageWithSkeleton
-                            src="/worksimage/rogue/Rogue4.jpg"
+                            src="/images/rogue/Rogue4.jpg"
                             alt="Image 4"
                             width={144}
                             height={256}
@@ -54,7 +54,7 @@ const WorkDetailRogue= () => {
                     </div>
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150">
                         <ImageWithSkeleton
-                            src="/worksimage/rogue/Rogue5.png"
+                            src="/images/rogue/Rogue5.png"
                             alt="Image 5"
                             width={144}
                             height={256}

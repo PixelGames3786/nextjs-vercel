@@ -23,7 +23,7 @@ const WorkDetailParadise= () => {
                 <div className="flex w-full h-full justify-center space-x-10 pb-10">
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
-                            src="/worksimage/paradise/Paradise1.jpg"
+                            src="/images/paradise/Paradise1.jpg"
                             alt="Image 1"
                             width={256}
                             height={144}
@@ -31,7 +31,7 @@ const WorkDetailParadise= () => {
                     </div>
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
-                            src="/worksimage/paradise/Paradise2.jpg"
+                            src="/images/paradise/Paradise2.jpg"
                             alt="Image 2"
                             width={256}
                             height={144}
@@ -39,7 +39,7 @@ const WorkDetailParadise= () => {
                     </div>
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
-                            src="/worksimage/paradise/Paradise3.jpg"
+                            src="/images/paradise/Paradise3.jpg"
                             alt="Image 3"
                             width={256}
                             height={144}
@@ -50,7 +50,7 @@ const WorkDetailParadise= () => {
                 <div className="flex w-full h-full justify-center space-x-10">
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
-                            src="/worksimage/paradise/Paradise4.jpg"
+                            src="/images/paradise/Paradise4.jpg"
                             alt="Image 4"
                             width={256}
                             height={144}
@@ -58,7 +58,7 @@ const WorkDetailParadise= () => {
                     </div>
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
-                            src="/worksimage/paradise/Paradise5.jpg"
+                            src="/images/paradise/Paradise5.jpg"
                             alt="Image 5"
                             width={256}
                             height={144}
