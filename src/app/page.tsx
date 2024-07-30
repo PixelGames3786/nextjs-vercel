@@ -62,7 +62,7 @@ export default function Home() {
           transition={{ duration: 0.5 }}>
           <div className="flex mx-auto px-4 sm:px-6 lg:px-8">
             <span className="flex-grow text-center h-16 flex items-center justify-start">
-              Kaiu Tomozawa's Portfolio
+              Kaiu Tomozawa&rsquo;s Portfolio
             </span>
             <span className="flex items-center justify-end ml-auto">
               <NavigationMenu>
@@ -139,7 +139,7 @@ export default function Home() {
             </Card>
             <Card className="w-[40%] max-w-md">
               <CardHeader onClick={() => { handleClick(4) }}>
-                <CardTitle>Lady's taste</CardTitle>
+                <CardTitle>Lady&rsquo;s taste</CardTitle>
                 <CardDescription>カードゲーム</CardDescription>
               </CardHeader>
             </Card>
