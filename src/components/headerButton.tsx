@@ -29,6 +29,12 @@ const HeaderButton: React.FC<HeaderButtonProps> = ({ sectionId, buttonName }) =>
         if (section) {
             section.scrollIntoView({ behavior: 'smooth' });
         }
+
+        handleMouseEnter();
+
+        setTimeout(() => {
+            handleMouseLeave();
+          }, 500);
     };
 
     return (

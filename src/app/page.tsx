@@ -62,7 +62,7 @@ export default function Home() {
   const handleScroll = () => {
     const viewportHeight = document.body.offsetHeight;
     const scrollPosition = window.scrollY;
-    const threshold = viewportHeight * (50 / 100);
+    const threshold = viewportHeight * 0.5;
 
     setShowBackButton(scrollPosition > threshold);
   };
@@ -192,6 +192,7 @@ export default function Home() {
           {selectTag === 3 && <WorkDetailSatelite key="workDetailSatelite" />}
           {selectTag === 4 && <WorkDetailLady key="workDetailLady" />}
           {selectTag === 5 && <WorkDetailPortfolio key="workDetailPortfolio" />}
+
           {showBackButton && <BackToTopButton key="backToTopButton" />}
         </AnimatePresence>
 

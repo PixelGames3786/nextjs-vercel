@@ -16,7 +16,6 @@ const ImageWithSkeleton: React.FC<ImageWithSkeletonProps> = ({ src, alt, width, 
     <div>
       {isLoading && (
         <Skeleton
-          className="absolute inset-0"
           style={{ width, height }} // Skeletonのサイズを指定
         />
       )}
