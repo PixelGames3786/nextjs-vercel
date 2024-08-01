@@ -15,12 +15,12 @@ const WorkDetailParadise= () => {
             exit={{ scaleY: 0, opacity:0,height:0,transformOrigin: 'top left' }}
             style={{ transformOrigin: 'top left' }}>
             
-            <div className='w-[800px] mx-auto'>
+            <div className='w-[90%] lg:w-[800px] mx-auto'>
                 <div className="pt-10 pb-10 text-center justify-between font-mono font-semibold text-4xl">
                     PARADISE LOST
                 </div>
 
-                <div className="flex w-full h-full justify-center space-x-10 pb-10">
+                <div className="flex w-full h-full justify-center space-x-5 md:space-x-10 pb-5 md:pb-10">
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
                             src="/images/paradise/Paradise1.jpg"
@@ -47,7 +47,7 @@ const WorkDetailParadise= () => {
                     </div>
                 </div>
 
-                <div className="flex w-full h-full justify-center space-x-10">
+                <div className="flex p-x-17p md:p-0 w-full h-full items-center justify-center space-x-5 md:space-x-10">
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
                             src="/images/paradise/Paradise4.jpg"
@@ -66,16 +66,16 @@ const WorkDetailParadise= () => {
                     </div>
                 </div>
 
-
-
-                <ul className='justify-center pt-10 pb-10'>
+                <ul className='justify-center pt-10 pb-10 text-sm md:text-base'>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>URL</p>
-                        <p className='w-4/5'>https://drive.google.com/drive/folders/1DPbWj_noDVPfs4xso2xdzpHhL-Db0Kyj?usp=drive_link(配布中)</p>
+                        <p className='hidden w-4/5 md:block'>https://drive.google.com/drive/folders/1DPbWj_noDVPfs4xso2xdzpHhL-Db0Kyj?usp=drive_link(配布中)</p>
+                        <p className='w-4/5 md:hidden'>https://drive.google.com/drive/folders/<br/>1DPbWj_noDVPfs4xso2xdzpHhL-Db0Kyj?usp=drive_link(配布中)</p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>ソースコード</p>
-                        <p className='w-4/5'>https://github.com/PixelGames3786/PARADISE-LOST_URP</p>
+                        <p className='hidden w-4/5 md:block'>https://github.com/PixelGames3786/PARADISE-LOST_URP</p>
+                        <p className='w-4/5 md:hidden'>https://github.com/PixelGames3786/<br/>PARADISE-LOST_URP</p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>説明</p>

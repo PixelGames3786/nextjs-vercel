@@ -14,12 +14,12 @@ const WorkDetailRogue= () => {
             transition={{ duration: 0.5 }}
             exit={{ scaleY: 0, opacity:0,height:0,transformOrigin: 'top left' }}
             style={{ transformOrigin: 'top left' }}>
-            <div className='w-[800px] mx-auto'>
-                <div className="pt-10 pb-10 text-center justify-between font-mono font-semibold text-3xl">
+            <div className='w-[90%] lg:w-[800px] mx-auto'>
+                <div className="pt-10 pb-10 text-center justify-between font-mono font-semibold text-2xl md:text-3xl">
                     ログ・ログ・ローグ
                 </div>
 
-                <div className="flex w-full justify-center space-x-10">
+                <div className="flex w-full justify-center space-x-5 md:space-x-10">
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150">
                         <ImageWithSkeleton
                             src="/images/rogue/Rogue1.jpg"
@@ -64,14 +64,16 @@ const WorkDetailRogue= () => {
 
 
 
-                <ul className='justify-center pt-10 pb-10'>
+                <ul className='justify-center pt-10 pb-10 text-sm md:text-base'>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>URL</p>
-                        <p className='w-4/5'>非公開</p>
+                        <p className='w-4/5'>現在非公開</p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>ソースコード</p>
-                        <p className='w-4/5'>https://github.com/PixelGames3786/RoguRoguRogue</p>
+                        <p className='hidden w-4/5 md:block'>https://github.com/PixelGames3786/RoguRoguRogue</p>
+                        <p className='w-4/5 md:hidden'>https://github.com/PixelGames3786/<br/>RoguRoguRogue</p>
+
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>説明</p>
