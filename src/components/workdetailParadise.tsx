@@ -24,7 +24,7 @@ const WorkDetailParadise= () => {
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
                             src="/images/paradise/Paradise1.jpg"
-                            alt="Image 1"
+                            alt="PARADISE LOST画像1"
                             width={256}
                             height={144}
                         />
@@ -32,7 +32,7 @@ const WorkDetailParadise= () => {
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
                             src="/images/paradise/Paradise2.jpg"
-                            alt="Image 2"
+                            alt="PARADISE LOST画像2"
                             width={256}
                             height={144}
                         />
@@ -40,7 +40,7 @@ const WorkDetailParadise= () => {
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
                             src="/images/paradise/Paradise3.jpg"
-                            alt="Image 3"
+                            alt="PARADISE LOST画像3"
                             width={256}
                             height={144}
                         />
@@ -51,7 +51,7 @@ const WorkDetailParadise= () => {
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
                             src="/images/paradise/Paradise4.jpg"
-                            alt="Image 4"
+                            alt="PARADISE LOST画像4"
                             width={256}
                             height={144}
                         />
@@ -59,7 +59,7 @@ const WorkDetailParadise= () => {
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
                             src="/images/paradise/Paradise5.jpg"
-                            alt="Image 5"
+                            alt="PARADISE LOST画像5"
                             width={256}
                             height={144}
                         />

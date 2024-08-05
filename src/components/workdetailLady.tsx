@@ -24,7 +24,7 @@ const WorkDetailLady= () => {
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
                             src="/images/lady/Lady1.jpg"
-                            alt="Image 1"
+                            alt="Lady's taste画像1"
                             width={256}
                             height={144}
                         />
@@ -32,7 +32,7 @@ const WorkDetailLady= () => {
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
                             src="/images/lady/Lady2.jpg"
-                            alt="Image 2"
+                            alt="Lady's taste画像2"
                             width={256}
                             height={144}
                         />
@@ -40,7 +40,7 @@ const WorkDetailLady= () => {
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
                             src="/images/lady/Lady3.jpg"
-                            alt="Image 3"
+                            alt="Lady's taste画像3"
                             width={256}
                             height={144}
                         />
@@ -51,7 +51,7 @@ const WorkDetailLady= () => {
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
                             src="/images/lady/Lady4.jpg"
-                            alt="Image 4"
+                            alt="Lady's taste画像4"
                             width={256}
                             height={144}
                         />
@@ -59,7 +59,7 @@ const WorkDetailLady= () => {
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
                             src="/images/lady/Lady5.jpg"
-                            alt="Image 5"
+                            alt="Lady's taste画像5"
                             width={256}
                             height={144}
                         />

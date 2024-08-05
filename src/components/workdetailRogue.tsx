@@ -23,7 +23,7 @@ const WorkDetailRogue= () => {
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150">
                         <ImageWithSkeleton
                             src="/images/rogue/Rogue1.jpg"
-                            alt="Image 1"
+                            alt="ログ・ログ・ローグ画像1"
                             width={144}
                             height={256}
                         />
@@ -31,7 +31,7 @@ const WorkDetailRogue= () => {
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150">
                         <ImageWithSkeleton
                             src="/images/rogue/Rogue2.jpg"
-                            alt="Image 2"
+                            alt="ログ・ログ・ローグ画像2"
                             width={144}
                             height={256}
                         />
@@ -39,7 +39,7 @@ const WorkDetailRogue= () => {
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150">
                         <ImageWithSkeleton
                             src="/images/rogue/Rogue3.jpg"
-                            alt="Image 3"
+                            alt="ログ・ログ・ローグ画像3"
                             width={144}
                             height={256}
                         />
@@ -47,7 +47,7 @@ const WorkDetailRogue= () => {
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150">
                         <ImageWithSkeleton
                             src="/images/rogue/Rogue4.jpg"
-                            alt="Image 4"
+                            alt="ログ・ログ・ローグ画像4"
                             width={144}
                             height={256}
                         />
@@ -55,7 +55,7 @@ const WorkDetailRogue= () => {
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150">
                         <ImageWithSkeleton
                             src="/images/rogue/Rogue5.png"
-                            alt="Image 5"
+                            alt="ログ・ログ・ローグ画像5"
                             width={144}
                             height={256}
                         />

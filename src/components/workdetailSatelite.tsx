@@ -24,7 +24,7 @@ const WorkDetailSatelite= () => {
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
                             src="/images/satelite/Satelite1.jpg"
-                            alt="Image 1"
+                            alt="サテライディフェンス画像1"
                             width={256}
                             height={144}
                         />
@@ -32,7 +32,7 @@ const WorkDetailSatelite= () => {
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
                             src="/images/satelite/Satelite2.jpg"
-                            alt="Image 2"
+                            alt="サテライディフェンス画像2"
                             width={256}
                             height={144}
                         />
@@ -40,7 +40,7 @@ const WorkDetailSatelite= () => {
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
                             src="/images/satelite/Satelite3.jpg"
-                            alt="Image 3"
+                            alt="サテライディフェンス画像3"
                             width={256}
                             height={144}
                         />
@@ -51,7 +51,7 @@ const WorkDetailSatelite= () => {
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
                             src="/images/satelite/Satelite4.jpg"
-                            alt="Image 4"
+                            alt="サテライディフェンス画像4"
                             width={256}
                             height={144}
                         />
@@ -59,7 +59,7 @@ const WorkDetailSatelite= () => {
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
                             src="/images/satelite/Satelite5.jpg"
-                            alt="Image 5"
+                            alt="サテライディフェンス画像5"
                             width={256}
                             height={144}
                         />

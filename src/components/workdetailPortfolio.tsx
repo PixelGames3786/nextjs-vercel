@@ -23,8 +23,8 @@ const WorkDetailPortfolio= () => {
                 <ul className='justify-center pt-10 pb-10 text-sm md:text-base'>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>URL</p>
-                        <p className='hidden w-4/5 md:block'>https://unityroom.com/games/sateli_difense</p>
-                        <p className='w-4/5 md:hidden'>https://unityroom.com/games/<br/>sateli_difense</p>
+                        <p className='hidden w-4/5 md:block'>https://www.tomok13.com/</p>
+                        <p className='w-4/5 md:hidden'>https://www.tomok13.com/</p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>ソースコード</p>
