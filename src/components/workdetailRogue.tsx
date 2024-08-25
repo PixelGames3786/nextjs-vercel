@@ -66,13 +66,23 @@ const WorkDetailRogue= () => {
 
                 <ul className='justify-center pt-10 pb-10 text-sm md:text-base'>
                     <li className='flex justify-center py-[10px] border-b-2'>
-                        <p className='w-1/5'>URL</p>
+                        <p className='w-1/5'>プレイリンク</p>
                         <p className='w-4/5'>現在非公開</p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
+                        <p className='w-1/5'>動画リンク</p>
+                        <p className='w-4/5 hover:text-blue-600 duration-150'>
+                            <a href= "https://youtu.be/e7MiWDE1FrY" target="_blank">https://youtu.be/e7MiWDE1FrY</a>
+                        </p>
+                    </li>
+                    <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>ソースコード</p>
-                        <p className='hidden w-4/5 md:block'>https://github.com/PixelGames3786/RoguRoguRogue</p>
-                        <p className='w-4/5 md:hidden'>https://github.com/PixelGames3786/<br/>RoguRoguRogue</p>
+                        <p className='hidden w-4/5 md:block hover:text-blue-600 duration-150'>
+                            <a href= "https://github.com/PixelGames3786/RoguRoguRogue" target="_blank">https://github.com/PixelGames3786/RoguRoguRogue</a>
+                        </p>
+                        <p className='w-4/5 md:hidden hover:text-blue-600 duration-150'>
+                            <a href= "https://github.com/PixelGames3786/RoguRoguRogue" target="_blank">https://github.com/PixelGames3786/<br/>RoguRoguRogue</a>
+                        </p>
 
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>

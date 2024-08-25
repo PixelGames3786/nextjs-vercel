@@ -68,14 +68,28 @@ const WorkDetailParadise= () => {
 
                 <ul className='justify-center pt-10 pb-10 text-sm md:text-base'>
                     <li className='flex justify-center py-[10px] border-b-2'>
-                        <p className='w-1/5'>URL</p>
-                        <p className='hidden w-4/5 md:block'>https://drive.google.com/drive/folders/1DPbWj_noDVPfs4xso2xdzpHhL-Db0Kyj?usp=drive_link(配布中)</p>
-                        <p className='w-4/5 md:hidden'>https://drive.google.com/drive/folders/<br/>1DPbWj_noDVPfs4xso2xdzpHhL-Db0Kyj?usp=drive_link(配布中)</p>
+                        <p className='w-1/5'>配布URL</p>
+                        <p className='hidden w-4/5 md:block hover:text-blue-600 duration-150'>
+                            <a href= "https://drive.google.com/drive/folders/1FnJqtOAmsDQoUB2g0B-k1BmcFUc9NBfz?usp=sharing" target="_blank">https://drive.google.com/drive/folders/1FnJqtOAmsDQoUB2g0B-k1BmcFUc9NBfz?usp=sharing(配布中)</a>
+                        </p>
+                        <p className='w-4/5 md:hidden hover:text-blue-600 duration-150'>
+                            <a href= "https://drive.google.com/drive/folders/1FnJqtOAmsDQoUB2g0B-k1BmcFUc9NBfz?usp=sharing" target="_blank">https://drive.google.com/drive/folders/<br/>1FnJqtOAmsDQoUB2g0B-k1BmcFUc9NBfz?usp=sharing(配布中)</a>
+                        </p>
+                    </li>
+                    <li className='flex justify-center py-[10px] border-b-2'>
+                        <p className='w-1/5'>動画URL</p>
+                        <p className='w-4/5 hover:text-blue-600 duration-150'>
+                            <a href= "https://youtu.be/ZciMoMvtATo" target="_blank">https://youtu.be/ZciMoMvtATo</a>
+                        </p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>ソースコード</p>
-                        <p className='hidden w-4/5 md:block'>https://github.com/PixelGames3786/PARADISE-LOST_URP</p>
-                        <p className='w-4/5 md:hidden'>https://github.com/PixelGames3786/<br/>PARADISE-LOST_URP</p>
+                        <p className='hidden w-4/5 md:block hover:text-blue-600 duration-150'>
+                            <a href= "https://github.com/PixelGames3786/PARADISE-LOST_URP" target="_blank">https://github.com/PixelGames3786/PARADISE-LOST_URP</a>
+                        </p>
+                        <p className='w-4/5 md:hidden hover:text-blue-600 duration-150'>
+                            <a href= "https://github.com/PixelGames3786/PARADISE-LOST_URP" target="_blank">https://github.com/PixelGames3786/<br/>PARADISE-LOST_URP</a>
+                        </p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>説明</p>

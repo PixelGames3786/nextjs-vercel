@@ -68,14 +68,26 @@ const WorkDetailSatelite= () => {
 
                 <ul className='justify-center pt-10 pb-10 text-sm md:text-base'>
                     <li className='flex justify-center py-[10px] border-b-2'>
-                        <p className='w-1/5'>URL</p>
-                        <p className='hidden w-4/5 md:block'>https://unityroom.com/games/sateli_difense(UnityRoom)</p>
+                        <p className='w-1/5'>プレイリンク</p>
+                        <p className='hidden w-4/5 md:block hover:text-blue-600 duration-150'>
+                            <a href= "https://unityroom.com/games/sateli_difense" target="_blank">https://unityroom.com/games/sateli_difense(UnityRoom)</a>
+                        </p>
                         <p className='w-4/5 md:hidden'>https://unityroom.com/games/<br/>sateli_difense(UnityRoom)</p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
+                        <p className='w-1/5'>動画リンク</p>
+                        <p className='w-4/5 hover:text-blue-600 duration-150'>
+                            <a href= "https://youtu.be/VLgTiDc5bkM" target="_blank">https://youtu.be/VLgTiDc5bkM</a>
+                        </p>
+                    </li>
+                    <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>ソースコード</p>
-                        <p className='hidden w-4/5 md:block'>https://github.com/PixelGames3786/SateliDifense</p>
-                        <p className='w-4/5 md:hidden'>https://github.com/PixelGames3786/<br/>SateliDifense</p>
+                        <p className='hidden w-4/5 md:block hover:text-blue-600 duration-150'>
+                            <a href= "https://github.com/PixelGames3786/SateliDifense" target="_blank">https://github.com/PixelGames3786/SateliDifense</a>
+                        </p>
+                        <p className='w-4/5 md:hidden hover:text-blue-600 duration-150'>
+                            <a href= "https://github.com/PixelGames3786/SateliDifense" target="_blank">https://github.com/PixelGames3786/<br/>SateliDifense</a>
+                        </p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>説明</p>

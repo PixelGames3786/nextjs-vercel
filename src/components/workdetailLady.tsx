@@ -70,14 +70,28 @@ const WorkDetailLady= () => {
 
                 <ul className='justify-center pt-10 pb-10 text-sm md:text-base'>
                     <li className='flex justify-center py-[10px] border-b-2'>
-                        <p className='w-1/5'>URL</p>
-                        <p className='hidden w-4/5 md:block'>https://drive.google.com/drive/folders/1Vgb2JJfpKdrRxmnoQAIkwNwgWYgozcIo?usp=drive_link(配布中)</p>
-                        <p className='w-4/5 md:hidden'>https://drive.google.com/drive/folders/<br/>1Vgb2JJfpKdrRxmnoQAIkwNwgWYgozcIo?usp=drive_link(配布中)</p>
+                        <p className='w-1/5'>配布URL</p>
+                        <p className='hidden w-4/5 md:block hover:text-blue-600 duration-150'>
+                            <a href= "https://drive.google.com/drive/folders/1S9bkE9Kd-qKDvzNIvbqvH8XEDrbop_FH?usp=sharing" target="_blank">https://drive.google.com/drive/folders/1S9bkE9Kd-qKDvzNIvbqvH8XEDrbop_FH?usp=sharing(配布中)</a>
+                        </p>
+                        <p className='w-4/5 md:hidden hover:text-blue-600 duration-150'>
+                            <a href= "https://drive.google.com/drive/folders/1S9bkE9Kd-qKDvzNIvbqvH8XEDrbop_FH?usp=sharing" target="_blank">https://drive.google.com/drive/folders/<br/>1S9bkE9Kd-qKDvzNIvbqvH8XEDrbop_FH?usp=sharing(配布中)</a>
+                        </p>
+                    </li>
+                    <li className='flex justify-center py-[10px] border-b-2'>
+                        <p className='w-1/5'>動画URL</p>
+                        <p className='w-4/5 hover:text-blue-600 duration-150'>
+                            <a href= "https://youtu.be/ktOXSF0Sg9M" target="_blank">https://youtu.be/ktOXSF0Sg9M</a>
+                        </p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>ソースコード</p>
-                        <p className='hidden w-4/5 md:block'>https://github.com/PixelGames3786/OjousamaCard</p>
-                        <p className='w-4/5 md:hidden'>https://github.com/PixelGames3786/<br/>OjousamaCard</p>
+                        <p className='hidden w-4/5 md:block hover:text-blue-600 duration-150'>
+                            <a href= "https://github.com/PixelGames3786/OjousamaCard" target="_blank">https://github.com/PixelGames3786/OjousamaCard</a>
+                        </p>
+                        <p className='w-4/5 md:hidden hover:text-blue-600 duration-150'>
+                            <a href= "https://github.com/PixelGames3786/OjousamaCard" target="_blank">https://github.com/PixelGames3786<br/>/OjousamaCard</a>
+                        </p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>説明</p>
