@@ -8,6 +8,7 @@ import WorkDetailRogue from "@/components/workdetailRogue";
 import WorkDetailParadise from "@/components/workdetailParadise";
 import WorkDetailSatelite from "@/components/workdetailSatelite";
 import WorkDetailLady from "@/components/workdetailLady";
+import WorkDetailPitatto from "@/components/workdetailPitatto";
 import WorkDetailPortfolio from "@/components/workdetailPortfolio";
 
 import { Button } from "@/components/ui/button"
@@ -173,6 +174,12 @@ export default function Home() {
           <div className="flex space-x-2 md:space-x-5 pb-5 items-center justify-center h-full ">
             <Card className="w-[45%] md:w-[40%] max-w-md hover:border-slate-500 hover:shadow-glow-blue duration-150">
               <CardHeader onClick={() => { handleClick(5) }}>
+                <CardTitle className="text-xs md:text-2xl">PITATTO はねカエル</CardTitle>
+                <CardDescription className="text-xs md:text-sm">防衛アクション</CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="w-[45%] md:w-[40%] max-w-md hover:border-slate-500 hover:shadow-glow-blue duration-150">
+              <CardHeader onClick={() => { handleClick(6) }}>
                 <CardTitle className="text-xs md:text-2xl">ポートフォリオ</CardTitle>
                 <CardDescription className="text-xs md:text-sm">Webサイト</CardDescription>
               </CardHeader>
@@ -191,7 +198,8 @@ export default function Home() {
           {selectTag === 2 && <WorkDetailParadise key="workDetailParadise" />}
           {selectTag === 3 && <WorkDetailSatelite key="workDetailSatelite" />}
           {selectTag === 4 && <WorkDetailLady key="workDetailLady" />}
-          {selectTag === 5 && <WorkDetailPortfolio key="workDetailPortfolio" />}
+          {selectTag === 5 && <WorkDetailPitatto key="workDetailPitatto" />}
+          {selectTag === 6 && <WorkDetailPortfolio key="workDetailPortfolio" />}
 
           {showBackButton && <BackToTopButton key="backToTopButton" />}
         </AnimatePresence>
