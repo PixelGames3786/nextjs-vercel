@@ -27,6 +27,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
+import { Analytics } from "@vercel/analytics/react"
 
 export default function Home() {
   const [selectTag, setselectTag] = useState(0);
@@ -76,6 +77,7 @@ export default function Home() {
 
   return (
     <div>
+      <Analytics/>
       <main className="flex min-h-screen flex-col bg-slate-200">
         <motion.header
           className="bg-slate-800 shadow w-full text-white h-20 items-center"
