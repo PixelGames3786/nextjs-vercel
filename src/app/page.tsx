@@ -10,6 +10,7 @@ import WorkDetailSatelite from "@/components/workdetailSatelite";
 import WorkDetailLady from "@/components/workdetailLady";
 import WorkDetailPitatto from "@/components/workdetailPitatto";
 import WorkDetailPortfolio from "@/components/workdetailPortfolio";
+import WorkDetailMetalFrontier from "@/components/workdetailMetalFrontier";
 
 import { Button } from "@/components/ui/button"
 import BackToTopButton from "@/components/backToTopButton";
@@ -186,6 +187,16 @@ export default function Home() {
             </Card>
           </div>
 
+          <div className="flex space-x-2 md:space-x-5 pb-5 items-center justify-center h-full ">
+            <Card className="w-[45%] md:w-[40%] max-w-md hover:border-slate-500 hover:shadow-glow-blue duration-150">
+              <CardHeader onClick={() => { handleClick(7) }}>
+                <CardTitle className="text-xs md:text-2xl">Metal Frontier</CardTitle>
+                <CardDescription className="text-xs md:text-sm">3Dメカアクション</CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+
+
           <div className="text-center text-slate-500 text-xs md:text-base">
             クリックすると詳細が表示されます
           </div>
@@ -200,6 +211,7 @@ export default function Home() {
           {selectTag === 4 && <WorkDetailLady key="workDetailLady" />}
           {selectTag === 5 && <WorkDetailPitatto key="workDetailPitatto" />}
           {selectTag === 6 && <WorkDetailPortfolio key="workDetailPortfolio" />}
+          {selectTag === 7 && <WorkDetailMetalFrontier key="workDetailMetalFrontier" />}
 
           {showBackButton && <BackToTopButton key="backToTopButton" />}
         </AnimatePresence>
