@@ -83,7 +83,7 @@ const WorkDetailMetalFrontier= () => {
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>説明</p>
                         <p className='w-4/5'>
-                            2020/9月から制作中の3Dメカアクションゲーム<br />
+                            2024/9月から制作中の3Dメカアクションゲーム<br />
                             工数削減のためボクセルモデルを使用している。<br />
                             現時点でボディパーツは20種以上、武器パーツは10種ほど実装済み。<br />
                             今後は、モジュールなどといったより拡張性を高める要素を実装する予定。
