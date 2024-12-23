@@ -2,9 +2,9 @@
 import Image from "next/image";
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { useState, useEffect, useContext } from 'react';
-import ImageWithSkeleton from "./ImageWithSkeleton";
+import ImageWithSkeleton from "../ImageWithSkeleton";
 
-const WorkDetailParadise= () => {
+const WorkDetailSatelite= () => {
 
     return (
         <motion.div
@@ -16,50 +16,50 @@ const WorkDetailParadise= () => {
             style={{ transformOrigin: 'top left' }}>
             
             <div className='w-[90%] lg:w-[800px] mx-auto'>
-                <div className="pt-10 pb-10 text-center justify-between font-mono font-semibold text-4xl">
-                    PARADISE LOST
+                <div className="pt-10 pb-10 text-center justify-between font-mono font-semibold text-3xl">
+                    サテライディフェンス
                 </div>
 
                 <div className="flex w-full h-full justify-center space-x-5 md:space-x-10 pb-5 md:pb-10">
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
-                            src="/images/paradise/Paradise1.jpg"
-                            alt="PARADISE LOST画像1"
+                            src="/images/satelite/Satelite1.jpg"
+                            alt="サテライディフェンス画像1"
                             width={256}
                             height={144}
                         />
                     </div>
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
-                            src="/images/paradise/Paradise2.jpg"
-                            alt="PARADISE LOST画像2"
+                            src="/images/satelite/Satelite2.jpg"
+                            alt="サテライディフェンス画像2"
                             width={256}
                             height={144}
                         />
                     </div>
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
-                            src="/images/paradise/Paradise3.jpg"
-                            alt="PARADISE LOST画像3"
+                            src="/images/satelite/Satelite3.jpg"
+                            alt="サテライディフェンス画像3"
                             width={256}
                             height={144}
                         />
                     </div>
                 </div>
 
-                <div className="flex p-x-17p md:p-0 w-full h-full items-center justify-center space-x-5 md:space-x-10">
+                <div className="flex p-x-17p md:p-0 w-full h-full justify-center space-x-5 md:space-x-10">
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
-                            src="/images/paradise/Paradise4.jpg"
-                            alt="PARADISE LOST画像4"
+                            src="/images/satelite/Satelite4.jpg"
+                            alt="サテライディフェンス画像4"
                             width={256}
                             height={144}
                         />
                     </div>
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
-                            src="/images/paradise/Paradise5.jpg"
-                            alt="PARADISE LOST画像5"
+                            src="/images/satelite/Satelite5.jpg"
+                            alt="サテライディフェンス画像5"
                             width={256}
                             height={144}
                         />
@@ -68,35 +68,33 @@ const WorkDetailParadise= () => {
 
                 <ul className='justify-center pt-10 pb-10 text-sm md:text-base'>
                     <li className='flex justify-center py-[10px] border-b-2'>
-                        <p className='w-1/5'>配布URL</p>
+                        <p className='w-1/5'>プレイリンク</p>
                         <p className='hidden w-4/5 md:block hover:text-blue-600 duration-150'>
-                            <a href= "https://drive.google.com/drive/folders/1FnJqtOAmsDQoUB2g0B-k1BmcFUc9NBfz?usp=sharing" target="_blank">https://drive.google.com/drive/folders/1FnJqtOAmsDQoUB2g0B-k1BmcFUc9NBfz?usp=sharing(配布中)</a>
+                            <a href= "https://unityroom.com/games/sateli_difense" target="_blank">https://unityroom.com/games/sateli_difense(UnityRoom)</a>
                         </p>
-                        <p className='w-4/5 md:hidden hover:text-blue-600 duration-150'>
-                            <a href= "https://drive.google.com/drive/folders/1FnJqtOAmsDQoUB2g0B-k1BmcFUc9NBfz?usp=sharing" target="_blank">https://drive.google.com/drive/folders/<br/>1FnJqtOAmsDQoUB2g0B-k1BmcFUc9NBfz?usp=sharing(配布中)</a>
-                        </p>
+                        <p className='w-4/5 md:hidden'>https://unityroom.com/games/<br/>sateli_difense(UnityRoom)</p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
-                        <p className='w-1/5'>動画URL</p>
+                        <p className='w-1/5'>動画リンク</p>
                         <p className='w-4/5 hover:text-blue-600 duration-150'>
-                            <a href= "https://youtu.be/ZciMoMvtATo" target="_blank">https://youtu.be/ZciMoMvtATo</a>
+                            <a href= "https://youtu.be/VLgTiDc5bkM" target="_blank">https://youtu.be/VLgTiDc5bkM</a>
                         </p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>ソースコード</p>
                         <p className='hidden w-4/5 md:block hover:text-blue-600 duration-150'>
-                            <a href= "https://github.com/PixelGames3786/PARADISE-LOST_URP" target="_blank">https://github.com/PixelGames3786/PARADISE-LOST_URP</a>
+                            <a href= "https://github.com/PixelGames3786/SateliDifense" target="_blank">https://github.com/PixelGames3786/SateliDifense</a>
                         </p>
                         <p className='w-4/5 md:hidden hover:text-blue-600 duration-150'>
-                            <a href= "https://github.com/PixelGames3786/PARADISE-LOST_URP" target="_blank">https://github.com/PixelGames3786/<br/>PARADISE-LOST_URP</a>
+                            <a href= "https://github.com/PixelGames3786/SateliDifense" target="_blank">https://github.com/PixelGames3786/<br/>SateliDifense</a>
                         </p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>説明</p>
                         <p className='w-4/5'>
-                            2020/9~2021/8にかけて制作し、Unityユースクリエイターカップに参加した。<br />
-                            ICEYにインスパイアされた、2D横スクロールアクションゲーム。<br />
-                            ポストエフェクトを用いてリッチな演出を実現している。Shaderの作成にはShaderGraphを用いた。
+                            2021/9に制作し、Unity1Week「ちゅう」に参加した。<br />
+                            宇宙に着目し、人工衛星が惑星の周囲を旋回して防衛する円形タワーディフェンスゲーム。<br />
+                            ポストエフェクトやDOTweenを使用することで、短期間で高品質に見えるゲームを制作することが出来た。
                         </p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
@@ -109,4 +107,4 @@ const WorkDetailParadise= () => {
     )
 }
 
-export default WorkDetailParadise;
+export default WorkDetailSatelite;

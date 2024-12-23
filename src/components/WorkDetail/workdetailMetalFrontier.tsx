@@ -2,9 +2,9 @@
 import Image from "next/image";
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { useState, useEffect, useContext } from 'react';
-import ImageWithSkeleton from "./ImageWithSkeleton";
+import ImageWithSkeleton from "../ImageWithSkeleton";
 
-const WorkDetailSatelite= () => {
+const WorkDetailMetalFrontier= () => {
 
     return (
         <motion.div
@@ -16,50 +16,42 @@ const WorkDetailSatelite= () => {
             style={{ transformOrigin: 'top left' }}>
             
             <div className='w-[90%] lg:w-[800px] mx-auto'>
-                <div className="pt-10 pb-10 text-center justify-between font-mono font-semibold text-3xl">
-                    サテライディフェンス
+                <div className="pt-10 pb-10 text-center justify-between font-mono font-semibold text-4xl">
+                    MetalFrontier
                 </div>
 
                 <div className="flex w-full h-full justify-center space-x-5 md:space-x-10 pb-5 md:pb-10">
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
-                            src="/images/satelite/Satelite1.jpg"
-                            alt="サテライディフェンス画像1"
+                            src="/images/metal/MetalFrontier01.jpg"
+                            alt="MetalFrontier画像1"
                             width={256}
                             height={144}
                         />
                     </div>
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
-                            src="/images/satelite/Satelite2.jpg"
-                            alt="サテライディフェンス画像2"
+                            src="/images/metal/MetalFrontier02.jpg"
+                            alt="MetalFrontier画像2"
                             width={256}
                             height={144}
                         />
                     </div>
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
-                            src="/images/satelite/Satelite3.jpg"
-                            alt="サテライディフェンス画像3"
+                            src="/images/metal/MetalFrontier03.jpg"
+                            alt="MetalFrontier画像3"
                             width={256}
                             height={144}
                         />
                     </div>
                 </div>
 
-                <div className="flex p-x-17p md:p-0 w-full h-full justify-center space-x-5 md:space-x-10">
+                <div className="flex p-x-17p md:p-0 w-full h-full items-center justify-center space-x-5 md:space-x-10">
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
-                            src="/images/satelite/Satelite4.jpg"
-                            alt="サテライディフェンス画像4"
-                            width={256}
-                            height={144}
-                        />
-                    </div>
-                    <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
-                        <ImageWithSkeleton
-                            src="/images/satelite/Satelite5.jpg"
-                            alt="サテライディフェンス画像5"
+                            src="/images/metal/MetalFrontier04.jpg"
+                            alt="MetalFrontier画像4"
                             width={256}
                             height={144}
                         />
@@ -70,36 +62,36 @@ const WorkDetailSatelite= () => {
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>プレイリンク</p>
                         <p className='hidden w-4/5 md:block hover:text-blue-600 duration-150'>
-                            <a href= "https://unityroom.com/games/sateli_difense" target="_blank">https://unityroom.com/games/sateli_difense(UnityRoom)</a>
+                            非公開
                         </p>
-                        <p className='w-4/5 md:hidden'>https://unityroom.com/games/<br/>sateli_difense(UnityRoom)</p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
-                        <p className='w-1/5'>動画リンク</p>
+                        <p className='w-1/5'>動画URL</p>
                         <p className='w-4/5 hover:text-blue-600 duration-150'>
-                            <a href= "https://youtu.be/VLgTiDc5bkM" target="_blank">https://youtu.be/VLgTiDc5bkM</a>
+                            <a href= "https://youtu.be/HyiLYHAMmqo" target="_blank">https://youtu.be/HyiLYHAMmqo</a>
                         </p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>ソースコード</p>
                         <p className='hidden w-4/5 md:block hover:text-blue-600 duration-150'>
-                            <a href= "https://github.com/PixelGames3786/SateliDifense" target="_blank">https://github.com/PixelGames3786/SateliDifense</a>
+                            <a href= "https://github.com/PixelGames3786/MetalFrontier" target="_blank">https://github.com/PixelGames3786/MetalFrontier</a>
                         </p>
                         <p className='w-4/5 md:hidden hover:text-blue-600 duration-150'>
-                            <a href= "https://github.com/PixelGames3786/SateliDifense" target="_blank">https://github.com/PixelGames3786/<br/>SateliDifense</a>
+                            <a href= "https://github.com/PixelGames3786/MetalFrontier" target="_blank">https://github.com/PixelGames3786/<br/>MetalFrontier</a>
                         </p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>説明</p>
                         <p className='w-4/5'>
-                            2021/9に制作し、Unity1Week「ちゅう」に参加した。<br />
-                            宇宙に着目し、人工衛星が惑星の周囲を旋回して防衛する円形タワーディフェンスゲーム。<br />
-                            ポストエフェクトやDOTweenを使用することで、短期間で高品質に見えるゲームを制作することが出来た。
+                            2024/9月から制作中の3Dメカアクションゲーム<br />
+                            工数削減のためボクセルモデルを使用している。<br />
+                            現時点でボディパーツは20種以上、武器パーツは10種ほど実装済み。<br />
+                            今後は、モジュールなどといったより拡張性を高める要素を実装する予定。
                         </p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>使用ツール</p>
-                        <p className='w-4/5'>Unity</p>
+                        <p className='w-4/5'>Unity、Blender、MOG3D</p>
                     </li>
                 </ul>
             </div>
@@ -107,4 +99,4 @@ const WorkDetailSatelite= () => {
     )
 }
 
-export default WorkDetailSatelite;
+export default WorkDetailMetalFrontier;

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "TomozawaPortfolio",
-  description: "友澤懐宇のポートフォリオサイト",
+  title: "Nagarator",
+  description: "流板-Nagarator-",
 };
 
 export default function RootLayout({

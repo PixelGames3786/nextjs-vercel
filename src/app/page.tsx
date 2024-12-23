@@ -4,13 +4,13 @@ import Image from "next/image";
 import { useState, useEffect, ChangeEvent, MouseEvent } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
-import WorkDetailRogue from "@/components/workdetailRogue";
-import WorkDetailParadise from "@/components/workdetailParadise";
-import WorkDetailSatelite from "@/components/workdetailSatelite";
-import WorkDetailLady from "@/components/workdetailLady";
-import WorkDetailPitatto from "@/components/workdetailPitatto";
-import WorkDetailPortfolio from "@/components/workdetailPortfolio";
-import WorkDetailMetalFrontier from "@/components/workdetailMetalFrontier";
+import WorkDetailRogue from "@/components/WorkDetail/workdetailRogue";
+import WorkDetailParadise from "@/components/WorkDetail/workdetailParadise";
+import WorkDetailSatelite from "@/components/WorkDetail/workdetailSatelite";
+import WorkDetailLady from "@/components/WorkDetail/workdetailLady";
+import WorkDetailPitatto from "@/components/WorkDetail/workdetailPitatto";
+import WorkDetailPortfolio from "@/components/WorkDetail/workdetailPortfolio";
+import WorkDetailMetalFrontier from "@/components/WorkDetail/workdetailMetalFrontier";
 
 import { Button } from "@/components/ui/button"
 import BackToTopButton from "@/components/backToTopButton";

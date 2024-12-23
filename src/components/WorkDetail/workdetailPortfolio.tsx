@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { useState, useEffect, useContext } from 'react';
-import ImageWithSkeleton from "./ImageWithSkeleton";
+import ImageWithSkeleton from "../ImageWithSkeleton";
 
 const WorkDetailPortfolio= () => {
 

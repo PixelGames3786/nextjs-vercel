@@ -2,9 +2,9 @@
 import Image from "next/image";
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { useState, useEffect, useContext } from 'react';
-import ImageWithSkeleton from "./ImageWithSkeleton";
+import ImageWithSkeleton from "../ImageWithSkeleton";
 
-const WorkDetailMetalFrontier= () => {
+const WorkDetailParadise= () => {
 
     return (
         <motion.div
@@ -17,30 +17,30 @@ const WorkDetailMetalFrontier= () => {
             
             <div className='w-[90%] lg:w-[800px] mx-auto'>
                 <div className="pt-10 pb-10 text-center justify-between font-mono font-semibold text-4xl">
-                    MetalFrontier
+                    PARADISE LOST
                 </div>
 
                 <div className="flex w-full h-full justify-center space-x-5 md:space-x-10 pb-5 md:pb-10">
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
-                            src="/images/metal/MetalFrontier01.jpg"
-                            alt="MetalFrontier画像1"
+                            src="/images/paradise/Paradise1.jpg"
+                            alt="PARADISE LOST画像1"
                             width={256}
                             height={144}
                         />
                     </div>
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
-                            src="/images/metal/MetalFrontier02.jpg"
-                            alt="MetalFrontier画像2"
+                            src="/images/paradise/Paradise2.jpg"
+                            alt="PARADISE LOST画像2"
                             width={256}
                             height={144}
                         />
                     </div>
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
-                            src="/images/metal/MetalFrontier03.jpg"
-                            alt="MetalFrontier画像3"
+                            src="/images/paradise/Paradise3.jpg"
+                            alt="PARADISE LOST画像3"
                             width={256}
                             height={144}
                         />
@@ -50,8 +50,16 @@ const WorkDetailMetalFrontier= () => {
                 <div className="flex p-x-17p md:p-0 w-full h-full items-center justify-center space-x-5 md:space-x-10">
                     <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
                         <ImageWithSkeleton
-                            src="/images/metal/MetalFrontier04.jpg"
-                            alt="MetalFrontier画像4"
+                            src="/images/paradise/Paradise4.jpg"
+                            alt="PARADISE LOST画像4"
+                            width={256}
+                            height={144}
+                        />
+                    </div>
+                    <div className="transition-transform duration-300 ease-in-out transform hover:scale-150 hover:z-20">
+                        <ImageWithSkeleton
+                            src="/images/paradise/Paradise5.jpg"
+                            alt="PARADISE LOST画像5"
                             width={256}
                             height={144}
                         />
@@ -60,38 +68,40 @@ const WorkDetailMetalFrontier= () => {
 
                 <ul className='justify-center pt-10 pb-10 text-sm md:text-base'>
                     <li className='flex justify-center py-[10px] border-b-2'>
-                        <p className='w-1/5'>プレイリンク</p>
+                        <p className='w-1/5'>配布URL</p>
                         <p className='hidden w-4/5 md:block hover:text-blue-600 duration-150'>
-                            非公開
+                            <a href= "https://drive.google.com/drive/folders/1FnJqtOAmsDQoUB2g0B-k1BmcFUc9NBfz?usp=sharing" target="_blank">https://drive.google.com/drive/folders/1FnJqtOAmsDQoUB2g0B-k1BmcFUc9NBfz?usp=sharing(配布中)</a>
+                        </p>
+                        <p className='w-4/5 md:hidden hover:text-blue-600 duration-150'>
+                            <a href= "https://drive.google.com/drive/folders/1FnJqtOAmsDQoUB2g0B-k1BmcFUc9NBfz?usp=sharing" target="_blank">https://drive.google.com/drive/folders/<br/>1FnJqtOAmsDQoUB2g0B-k1BmcFUc9NBfz?usp=sharing(配布中)</a>
                         </p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>動画URL</p>
                         <p className='w-4/5 hover:text-blue-600 duration-150'>
-                            <a href= "https://youtu.be/HyiLYHAMmqo" target="_blank">https://youtu.be/HyiLYHAMmqo</a>
+                            <a href= "https://youtu.be/ZciMoMvtATo" target="_blank">https://youtu.be/ZciMoMvtATo</a>
                         </p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>ソースコード</p>
                         <p className='hidden w-4/5 md:block hover:text-blue-600 duration-150'>
-                            <a href= "https://github.com/PixelGames3786/MetalFrontier" target="_blank">https://github.com/PixelGames3786/MetalFrontier</a>
+                            <a href= "https://github.com/PixelGames3786/PARADISE-LOST_URP" target="_blank">https://github.com/PixelGames3786/PARADISE-LOST_URP</a>
                         </p>
                         <p className='w-4/5 md:hidden hover:text-blue-600 duration-150'>
-                            <a href= "https://github.com/PixelGames3786/MetalFrontier" target="_blank">https://github.com/PixelGames3786/<br/>MetalFrontier</a>
+                            <a href= "https://github.com/PixelGames3786/PARADISE-LOST_URP" target="_blank">https://github.com/PixelGames3786/<br/>PARADISE-LOST_URP</a>
                         </p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>説明</p>
                         <p className='w-4/5'>
-                            2024/9月から制作中の3Dメカアクションゲーム<br />
-                            工数削減のためボクセルモデルを使用している。<br />
-                            現時点でボディパーツは20種以上、武器パーツは10種ほど実装済み。<br />
-                            今後は、モジュールなどといったより拡張性を高める要素を実装する予定。
+                            2020/9~2021/8にかけて制作し、Unityユースクリエイターカップに参加した。<br />
+                            ICEYにインスパイアされた、2D横スクロールアクションゲーム。<br />
+                            ポストエフェクトを用いてリッチな演出を実現している。Shaderの作成にはShaderGraphを用いた。
                         </p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>使用ツール</p>
-                        <p className='w-4/5'>Unity、Blender、MOG3D</p>
+                        <p className='w-4/5'>Unity</p>
                     </li>
                 </ul>
             </div>
@@ -99,4 +109,4 @@ const WorkDetailMetalFrontier= () => {
     )
 }
 
-export default WorkDetailMetalFrontier;
+export default WorkDetailParadise;
