@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState, useEffect, ChangeEvent, MouseEvent } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
+import WorkSelectButton from "@/components/WorkDetail/workSelectButton";
 import WorkDetailRogue from "@/components/WorkDetail/workdetailRogue";
 import WorkDetailParadise from "@/components/WorkDetail/workdetailParadise";
 import WorkDetailSatelite from "@/components/WorkDetail/workdetailSatelite";
@@ -11,6 +12,7 @@ import WorkDetailLady from "@/components/WorkDetail/workdetailLady";
 import WorkDetailPitatto from "@/components/WorkDetail/workdetailPitatto";
 import WorkDetailPortfolio from "@/components/WorkDetail/workdetailPortfolio";
 import WorkDetailMetalFrontier from "@/components/WorkDetail/workdetailMetalFrontier";
+import WorkDetailNagarator from "@/components/WorkDetail/workdetailNagarator";
 
 import { Button } from "@/components/ui/button"
 import BackToTopButton from "@/components/backToTopButton";
@@ -77,7 +79,7 @@ export default function Home() {
 
   return (
     <div>
-      <Analytics/>
+      <Analytics />
       <main className="flex min-h-screen flex-col bg-slate-200">
         <motion.header
           className="bg-slate-800 shadow w-full text-white h-20 items-center"
@@ -89,9 +91,9 @@ export default function Home() {
               Kaiu Tomozawa&rsquo;s Portfolio
             </span>
             <span className="flex items-center justify-end ml-auto space-x-1 md:space-x-5">
-              <HeaderButton sectionId="AboutSection" buttonName="About"/>
-              <HeaderButton sectionId="WorksSection" buttonName="Works"/>
-              <HeaderButton sectionId="ContactSection" buttonName="Contact"/>
+              <HeaderButton sectionId="AboutSection" buttonName="About" />
+              <HeaderButton sectionId="WorksSection" buttonName="Works" />
+              <HeaderButton sectionId="ContactSection" buttonName="Contact" />
             </span>
           </div>
         </motion.header>
@@ -109,101 +111,66 @@ export default function Home() {
         </AnimatedSection>
 
         <AnimatedSection>
-        <div className="flex pb-10 md:pb-20 items-center justify-center h-full">
-          <div className="w-full max-w-5xl px-5 md:px-10">
-            <div className="mb-5 md:mb-10 ml-10 text-lg md:text-xl">
-              Name
-              <div className="ml-5 md:ml-10 text-sm md:text-base">友澤 懐宇</div>
-            </div>
-            <div className="mb-5 md:mb-10 ml-10 text-xl">
-              Introduction
-              <div className="ml-5 md:ml-10 text-sm md:text-base">
-                中学生の頃からプログラミングを学び始め、個人ゲーム開発者として活動中。
-                主に使用するツールはUnity、Aseprite。近年はウェブ開発にも関心を抱いています。
+          <div className="flex pb-10 md:pb-20 items-center justify-center h-full">
+            <div className="w-full max-w-5xl px-5 md:px-10">
+              <div className="mb-5 md:mb-10 ml-10 text-lg md:text-xl">
+                Name
+                <div className="ml-5 md:ml-10 text-sm md:text-base">友澤 懐宇</div>
               </div>
-            </div>
-            <div className="mb-5 md:mb-10 ml-10 text-xl">
-              Skill
-              <div className="hidden ml-10 text-base md:block">
-                C#,C++,Python(Django),JavaScript(Next.js)
+              <div className="mb-5 md:mb-10 ml-10 text-xl">
+                Introduction
+                <div className="ml-5 md:ml-10 text-sm md:text-base">
+                  中学生の頃からプログラミングを学び始め、個人ゲーム開発者として活動中。
+                  主に使用するツールはUnity、Aseprite。近年はウェブ開発にも関心を抱いています。
+                </div>
               </div>
-              <div className="ml-5 text-sm md:hidden">
-                C#,C++,Python(Django),
-                JavaScript(Next.js)
+              <div className="mb-5 md:mb-10 ml-10 text-xl">
+                Skill
+                <div className="hidden ml-10 text-base md:block">
+                  C#,C++,Python(Django),JavaScript(Next.js)
+                </div>
+                <div className="ml-5 text-sm md:hidden">
+                  C#,C++,Python(Django),
+                  JavaScript(Next.js)
+                </div>
               </div>
             </div>
           </div>
-        </div>
         </AnimatedSection>
 
         <AnimatedSection>
-        <div className="w-full h-full pl-10 md:pl-20 pb-8 md:pb-10 items-start justify-between font-mono text-4xl md:text-6xl" id="WorksSection">
-          Works
-        </div>
+          <div className="w-full h-full pl-10 md:pl-20 pb-8 md:pb-10 items-start justify-between font-mono text-4xl md:text-6xl" id="WorksSection">
+            Works
+          </div>
         </AnimatedSection>
 
         <AnimatedSection>
-        <div className="pb-16">
-          <div className="flex space-x-2 md:space-x-5 pb-5 items-center justify-center h-full ">
-            <Card className="w-[45%] md:w-[40%] max-w-md hover:border-slate-500 hover:shadow-glow-blue duration-150">
-              <CardHeader onClick={() => { handleClick(1) }}>
-                <CardTitle className="text-xs md:text-2xl">ログ・ログ・ローグ</CardTitle>
-                <CardDescription className="text-xs md:text-sm">RPG</CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="w-[45%] md:w-[40%] max-w-md hover:border-slate-500 hover:shadow-glow-blue duration-150">
-              <CardHeader onClick={() => { handleClick(2) }}>
-                <CardTitle className="text-xs md:text-2xl">PARADISE LOST</CardTitle>
-                <CardDescription className="text-xs md:text-sm">アクションRPG</CardDescription>
-              </CardHeader>
-            </Card>
+          <div className="pb-16">
+            <div className="flex space-x-2 md:space-x-5 pb-3 items-center justify-center h-full">
+              <WorkSelectButton workName="ログ・ログ・ローグ" workGenre="RPG" clickNum={1} onClick={handleClick} />
+              <WorkSelectButton workName="PARADISE LOST" workGenre="アクションRPG" clickNum={2} onClick={handleClick} />
+            </div>
+
+            <div className="flex space-x-2 md:space-x-5 pb-3 items-center justify-center h-full">
+              <WorkSelectButton workName="サテライディフェンス" workGenre="タワーディフェンス" clickNum={3} onClick={handleClick} />
+              <WorkSelectButton workName="Lady&rsquo;s taste" workGenre="カードゲーム" clickNum={4} onClick={handleClick} />
+            </div>
+
+            <div className="flex space-x-2 md:space-x-5 pb-3 items-center justify-center h-full">
+              <WorkSelectButton workName="PITATTO はねカエル" workGenre="防衛アクション" clickNum={5} onClick={handleClick} />
+              <WorkSelectButton workName="ポートフォリオ" workGenre="Webサイト" clickNum={6} onClick={handleClick} />
+            </div>
+
+            <div className="flex space-x-2 md:space-x-5 pb-3 items-center justify-center h-full">
+              <WorkSelectButton workName="Metal Frontier" workGenre="3Dメカアクション" clickNum={7} onClick={handleClick} />
+              <WorkSelectButton workName="Nagarator" workGenre="Web掲示板サービス" clickNum={8} onClick={handleClick} />
+            </div>
+
+            <div className="text-center text-slate-500 text-xs md:text-base">
+              クリックすると詳細が表示されます
+            </div>
+
           </div>
-
-          <div className="flex space-x-2 md:space-x-5 pb-5 items-center justify-center h-full ">
-            <Card className="w-[45%] md:w-[40%] max-w-md hover:border-slate-500 hover:shadow-glow-blue duration-150">
-              <CardHeader onClick={() => { handleClick(3) }}>
-                <CardTitle className="text-xs md:text-2xl">サテライディフェンス</CardTitle>
-                <CardDescription className="text-xs md:text-sm">タワーディフェンス</CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="w-[45%] md:w-[40%] max-w-md hover:border-slate-500 hover:shadow-glow-blue duration-150">
-              <CardHeader onClick={() => { handleClick(4) }}>
-                <CardTitle className="text-xs md:text-2xl">Lady&rsquo;s taste</CardTitle>
-                <CardDescription className="text-xs md:text-sm">カードゲーム</CardDescription>
-              </CardHeader>
-            </Card>
-          </div>
-
-          <div className="flex space-x-2 md:space-x-5 pb-5 items-center justify-center h-full ">
-            <Card className="w-[45%] md:w-[40%] max-w-md hover:border-slate-500 hover:shadow-glow-blue duration-150">
-              <CardHeader onClick={() => { handleClick(5) }}>
-                <CardTitle className="text-xs md:text-2xl">PITATTO はねカエル</CardTitle>
-                <CardDescription className="text-xs md:text-sm">防衛アクション</CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="w-[45%] md:w-[40%] max-w-md hover:border-slate-500 hover:shadow-glow-blue duration-150">
-              <CardHeader onClick={() => { handleClick(6) }}>
-                <CardTitle className="text-xs md:text-2xl">ポートフォリオ</CardTitle>
-                <CardDescription className="text-xs md:text-sm">Webサイト</CardDescription>
-              </CardHeader>
-            </Card>
-          </div>
-
-          <div className="flex space-x-2 md:space-x-5 pb-5 items-center justify-center h-full ">
-            <Card className="w-[45%] md:w-[40%] max-w-md hover:border-slate-500 hover:shadow-glow-blue duration-150">
-              <CardHeader onClick={() => { handleClick(7) }}>
-                <CardTitle className="text-xs md:text-2xl">Metal Frontier</CardTitle>
-                <CardDescription className="text-xs md:text-sm">3Dメカアクション</CardDescription>
-              </CardHeader>
-            </Card>
-          </div>
-
-
-          <div className="text-center text-slate-500 text-xs md:text-base">
-            クリックすると詳細が表示されます
-          </div>
-
-        </div>
         </AnimatedSection>
 
         <AnimatePresence>
@@ -214,22 +181,22 @@ export default function Home() {
           {selectTag === 5 && <WorkDetailPitatto key="workDetailPitatto" />}
           {selectTag === 6 && <WorkDetailPortfolio key="workDetailPortfolio" />}
           {selectTag === 7 && <WorkDetailMetalFrontier key="workDetailMetalFrontier" />}
-
+          {selectTag === 8 && <WorkDetailNagarator key="workDetailNagarator" />}
           {showBackButton && <BackToTopButton key="backToTopButton" />}
         </AnimatePresence>
 
         <AnimatedSection>
-        <div className="w-full h-full pl-10 md:pl-20 py-8 md:py-20 items-start justify-between font-mono text-4xl md:text-6xl" id="ContactSection">
-          Contact
-        </div>
+          <div className="w-full h-full pl-10 md:pl-20 py-8 md:py-20 items-start justify-between font-mono text-4xl md:text-6xl" id="ContactSection">
+            Contact
+          </div>
         </AnimatedSection>
 
         <AnimatedSection>
-        <div className="flex pb-20 items-center justify-center h-full">
-          <div className="w-full max-w-5xl mb-10 text-base md:text-xl text-center">
-            kaiutomozawa@gmail.com
+          <div className="flex pb-20 items-center justify-center h-full">
+            <div className="w-full max-w-5xl mb-10 text-base md:text-xl text-center">
+              kaiutomozawa@gmail.com
+            </div>
           </div>
-        </div>
         </AnimatedSection>
 
         <footer className="text-center text-sm md:text-base">
