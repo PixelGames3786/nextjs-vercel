@@ -8,7 +8,7 @@ const WorkDetailLady= () => {
 
     return (
         <motion.div
-            className='bg-slate-300 w-full'
+            className='bg-slate-300 w-full select-none'
             initial={{ scaleY: 0, opacity: 0,height:0}}
             animate={{ scaleY: 1, opacity: 1,height:'auto' }}
             transition={{ duration: 0.5 }}

@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import WorkSelectButton from "@/components/WorkDetail/workSelectButton";
 import WorkDetailRogue from "@/components/WorkDetail/workdetailRogue";
+import WorkDetailBooth from "@/components/WorkDetail/workdetailBooth";
 import WorkDetailParadise from "@/components/WorkDetail/workdetailParadise";
 import WorkDetailSatelite from "@/components/WorkDetail/workdetailSatelite";
 import WorkDetailLady from "@/components/WorkDetail/workdetailLady";
@@ -104,14 +105,14 @@ export default function Home() {
 
         <AnimatedSection>
           <div
-            className="w-full h-full pl-10 md:pl-20 pb-8 md:pb-10 items-start font-mono text-4xl md:text-6xl"
+            className="w-full h-full pl-10 md:pl-20 pb-8 md:pb-10 items-start font-mono text-4xl md:text-6xl select-none"
             id="AboutSection">
             About
           </div>
         </AnimatedSection>
 
         <AnimatedSection>
-          <div className="flex pb-10 md:pb-20 items-center justify-center h-full">
+          <div className="flex pb-10 md:pb-20 items-center justify-center h-full select-none">
             <div className="w-full max-w-5xl px-5 md:px-10">
               <div className="mb-5 md:mb-10 ml-10 text-lg md:text-xl">
                 Name
@@ -121,7 +122,7 @@ export default function Home() {
                 Introduction
                 <div className="ml-5 md:ml-10 text-sm md:text-base">
                   中学生の頃からプログラミングを学び始め、個人ゲーム開発者として活動中。
-                  主に使用するツールはUnity、Aseprite。近年はウェブ開発にも関心を抱いています。
+                  主に使用する言語はC#、JavaScript。近年はウェブ開発にも関心を抱いています。
                 </div>
               </div>
               <div className="mb-5 md:mb-10 ml-10 text-xl">
@@ -139,7 +140,7 @@ export default function Home() {
         </AnimatedSection>
 
         <AnimatedSection>
-          <div className="w-full h-full pl-10 md:pl-20 pb-8 md:pb-10 items-start justify-between font-mono text-4xl md:text-6xl" id="WorksSection">
+          <div className="select-none w-full h-full pl-10 md:pl-20 pb-8 md:pb-10 items-start justify-between font-mono text-4xl md:text-6xl" id="WorksSection">
             Works
           </div>
         </AnimatedSection>
@@ -152,21 +153,25 @@ export default function Home() {
             </div>
 
             <div className="flex space-x-2 md:space-x-5 pb-3 items-center justify-center h-full">
+              <WorkSelectButton workName="Booth" workGenre="3Dモデル販売" clickNum={9} onClick={handleClick} />
               <WorkSelectButton workName="サテライディフェンス" workGenre="タワーディフェンス" clickNum={3} onClick={handleClick} />
+            </div>
+
+            <div className="flex space-x-2 md:space-x-5 pb-3 items-center justify-center h-full">
               <WorkSelectButton workName="Lady&rsquo;s taste" workGenre="カードゲーム" clickNum={4} onClick={handleClick} />
-            </div>
-
-            <div className="flex space-x-2 md:space-x-5 pb-3 items-center justify-center h-full">
               <WorkSelectButton workName="PITATTO はねカエル" workGenre="防衛アクション" clickNum={5} onClick={handleClick} />
-              <WorkSelectButton workName="ポートフォリオ" workGenre="Webサイト" clickNum={6} onClick={handleClick} />
             </div>
 
             <div className="flex space-x-2 md:space-x-5 pb-3 items-center justify-center h-full">
+              <WorkSelectButton workName="ポートフォリオ" workGenre="Webサイト" clickNum={6} onClick={handleClick} />
               <WorkSelectButton workName="Metal Frontier" workGenre="3Dメカアクション" clickNum={7} onClick={handleClick} />
+            </div>
+
+            <div className="flex space-x-2 md:space-x-5 pb-3 items-center justify-center h-full">
               <WorkSelectButton workName="Nagarator" workGenre="Web掲示板サービス" clickNum={8} onClick={handleClick} />
             </div>
 
-            <div className="text-center text-slate-500 text-xs md:text-base">
+            <div className="text-center text-slate-500 text-xs md:text-base select-none">
               クリックすると詳細が表示されます
             </div>
 
@@ -174,7 +179,7 @@ export default function Home() {
         </AnimatedSection>
 
         <AnimatePresence>
-          {selectTag === 1 && <WorkDetailRogue key="workDetailRogue" />}
+          {selectTag === 1 && <WorkDetailRogue key="workDetailRogue"/>}
           {selectTag === 2 && <WorkDetailParadise key="workDetailParadise" />}
           {selectTag === 3 && <WorkDetailSatelite key="workDetailSatelite" />}
           {selectTag === 4 && <WorkDetailLady key="workDetailLady" />}
@@ -182,6 +187,7 @@ export default function Home() {
           {selectTag === 6 && <WorkDetailPortfolio key="workDetailPortfolio" />}
           {selectTag === 7 && <WorkDetailMetalFrontier key="workDetailMetalFrontier" />}
           {selectTag === 8 && <WorkDetailNagarator key="workDetailNagarator" />}
+          {selectTag === 9 && <WorkDetailBooth key="workDetailBooth" />}
           {showBackButton && <BackToTopButton key="backToTopButton" />}
         </AnimatePresence>
 
@@ -193,13 +199,13 @@ export default function Home() {
 
         <AnimatedSection>
           <div className="flex pb-20 items-center justify-center h-full">
-            <div className="w-full max-w-5xl mb-10 text-base md:text-xl text-center">
+            <div className="w-full max-w-5xl mb-10 text-base md:text-xl text-center select-none">
               kaiutomozawa@gmail.com
             </div>
           </div>
         </AnimatedSection>
 
-        <footer className="text-center text-sm md:text-base">
+        <footer className="text-center text-sm md:text-base select-none">
           <p>&copy; 2024 Kaiu Tomozawa. All Rights Reserved</p>
         </footer>
       </main>

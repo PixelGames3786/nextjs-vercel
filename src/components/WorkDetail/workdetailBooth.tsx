@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import React, { useState, useEffect, useContext } from 'react';
 import ImageWithSkeleton from "../ImageWithSkeleton";
 
-const WorkDetailPortfolio= () => {
+const WorkDetailBooth= () => {
 
     return (
         <motion.div
@@ -17,36 +17,31 @@ const WorkDetailPortfolio= () => {
             
             <div className='w-[90%] lg:w-[800px] mx-auto'>
                 <div className="pt-10 pb-10 text-center justify-between font-mono font-semibold text-3xl">
-                    ポートフォリオサイト
+                    Booth
                 </div>
 
                 <ul className='justify-center pt-10 pb-10 text-sm md:text-base'>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>URL</p>
                         <p className='w-4/5 hover:text-blue-600 duration-150'>
-                            <a href= "https://www.tomok13.com/" target="_blank">https://www.tomok13.com/</a>
+                            <a href= "https://pixel-el.booth.pm/" target="_blank">https://pixel-el.booth.pm/</a>
                         </p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>ソースコード</p>
-                        <p className='hidden w-4/5 md:block hover:text-blue-600 duration-150'>
-                            <a href= "https://github.com/PixelGames3786/nextjs-vercel" target="_blank">https://github.com/PixelGames3786/nextjs-vercel</a>
-                        </p>
-                        <p className='w-4/5 md:hidden hover:text-blue-600 duration-150'>
-                            <a href= "https://github.com/PixelGames3786/nextjs-vercel" target="_blank">https://github.com/PixelGames3786/<br/>nextjs-vercel</a>
+                        <p className='w-4/5'>
+                            なし<br />
                         </p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>説明</p>
                         <p className='w-4/5'>
-                            2024/7制作。このサイトのこと。<br />
-                            tailwindCSS、shadcn/uiを使用して短期間で制作することが出来た。<br />
-                            ホスティングにはVercelを使用している。
+                            ゲーム制作の際に作成した3Dモデルなどを販売している<br />
                         </p>
                     </li>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>使用ツール</p>
-                        <p className='w-4/5'>Next.js、Vercel</p>
+                        <p className='w-4/5'>Blender、Booth</p>
                     </li>
                 </ul>
             </div>
@@ -54,4 +49,4 @@ const WorkDetailPortfolio= () => {
     )
 }
 
-export default WorkDetailPortfolio;
+export default WorkDetailBooth;

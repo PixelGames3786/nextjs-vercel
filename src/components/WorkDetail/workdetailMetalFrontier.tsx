@@ -8,7 +8,7 @@ const WorkDetailMetalFrontier= () => {
 
     return (
         <motion.div
-            className='bg-slate-300 w-full'
+            className='bg-slate-300 w-full select-none'
             initial={{ scaleY: 0, opacity: 0,height:0}}
             animate={{ scaleY: 1, opacity: 1,height:'auto' }}
             transition={{ duration: 0.5 }}
@@ -61,7 +61,7 @@ const WorkDetailMetalFrontier= () => {
                 <ul className='justify-center pt-10 pb-10 text-sm md:text-base'>
                     <li className='flex justify-center py-[10px] border-b-2'>
                         <p className='w-1/5'>プレイリンク</p>
-                        <p className='hidden w-4/5 md:block hover:text-blue-600 duration-150'>
+                        <p className='hidden w-4/5 md:block'>
                             非公開
                         </p>
                     </li>
