@@ -14,6 +14,7 @@ import WorkDetailPitatto from "@/components/WorkDetail/workdetailPitatto";
 import WorkDetailPortfolio from "@/components/WorkDetail/workdetailPortfolio";
 import WorkDetailMetalFrontier from "@/components/WorkDetail/workdetailMetalFrontier";
 import WorkDetailNagarator from "@/components/WorkDetail/workdetailNagarator";
+import WorkDetailImagetuner from "@/components/WorkDetail/workdetailImageTuner";
 
 import { Button } from "@/components/ui/button"
 import BackToTopButton from "@/components/backToTopButton";
@@ -169,6 +170,7 @@ export default function Home() {
 
             <div className="flex space-x-2 md:space-x-5 pb-3 items-center justify-center h-full">
               <WorkSelectButton workName="Nagarator" workGenre="Web掲示板サービス" clickNum={8} onClick={handleClick} />
+              <WorkSelectButton workName="ImageTuner" workGenre="画像処理サービス" clickNum={10} onClick={handleClick} />
             </div>
 
             <div className="text-center text-slate-500 text-xs md:text-base select-none">
@@ -188,6 +190,7 @@ export default function Home() {
           {selectTag === 7 && <WorkDetailMetalFrontier key="workDetailMetalFrontier" />}
           {selectTag === 8 && <WorkDetailNagarator key="workDetailNagarator" />}
           {selectTag === 9 && <WorkDetailBooth key="workDetailBooth" />}
+          {selectTag === 10 && <WorkDetailImagetuner key="workDetailImageTuner" />}
           {showBackButton && <BackToTopButton key="backToTopButton" />}
         </AnimatePresence>
 
