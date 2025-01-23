@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react';
+import ClipLoader from 'react-spinners/ClipLoader';
 import { Analytics } from "@vercel/analytics/react"
 import Image from "next/image";
 
@@ -13,7 +14,7 @@ export interface TuneSetting {
 
 export default function Home() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+  const [previewUrl, setPreviewUrl] = useState<string>("");
   const [isProcessing, setIsProcessing] = useState<boolean>(false);
   const [isProcessed, setIsProcessed] = useState<boolean>(false);
   const [tuneSetting, setTuneSetting] = useState<TuneSetting>({
@@ -32,22 +33,22 @@ export default function Home() {
 
   const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newSetting = tuneSetting;
-    const newReduceColorNum=parseInt(event.target.value);
+    const newReduceColorNum = parseInt(event.target.value);
     tuneSetting.reduceColorNum = newReduceColorNum;
     setTuneSetting(newSetting);
-    if(selectedFile) handleUpload();
   };
 
   const handleCompressChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newSetting = tuneSetting;
     tuneSetting.compression = event.target.value.toLowerCase() === "true";
     setTuneSetting(newSetting);
-    if(selectedFile) handleUpload();
   };
 
   const handleUpload = async () => {
     if (isProcessing) return;
     if (!selectedFile) return alert('画像を選択してください');
+
+    setIsProcessing(true);
 
     const formData = new FormData();
     formData.append('file', selectedFile);
@@ -62,7 +63,7 @@ export default function Home() {
       if (!response.ok) {
         const errorData = await response.json();
         alert(errorData.error);
-        setIsProcessing(true);
+        setIsProcessing(false);
         return;
       }
 
@@ -73,6 +74,7 @@ export default function Home() {
       const objectUrl = URL.createObjectURL(blob);
       setPreviewUrl(objectUrl);
       setIsProcessed(true);
+      setIsProcessing(false);
     } catch (error) {
       console.error('Upload failed:', error);
       alert('画像のアップロードに失敗しました');
@@ -91,7 +93,7 @@ export default function Home() {
       </header>
 
       {/*ファイル選択*/}
-      <div className='flex justify-center w-full outline py-5 space-x-10'>
+      <div className='flex justify-center w-full py-5 space-x-10'>
         <div className="flex flex-col items-center">
           <label
             htmlFor="fileInput"
@@ -115,104 +117,110 @@ export default function Home() {
         </label>
       </div>
 
-      {/*設定*/}
-      <div className='w-full bg-[#1D6CB1] py-3'>
-        <div className='flex w-full justify-center'>設定</div>
-        <div className='flex justify-center'>
-          <div className='space-x-2'>
-            <span className='pr-2'>色数制限</span>
-            <label>
-              <input
-                type="radio"
-                name="colorNum"
-                value="2"
-                onChange={handleRadioChange}
-              />
-              2
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="colorNum"
-                value="4"
-                onChange={handleRadioChange}
-              />
-              4
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="colorNum"
-                value="8"
-                onChange={handleRadioChange}
-                defaultChecked
-              />
-              8
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="colorNum"
-                value="16"
-                onChange={handleRadioChange}
-              />
-              16
-            </label>
+      <div className='w-full h-[500px] flex'>
+        {/*設定*/}
+        <div className='w-[25%] h-full bg-[#1D6CB1] py-3'>
+          <div className='flex w-full justify-center'>設定</div>
+          <div className='flex justify-center'>
+            <div className='space-x-2'>
+              <span className='pr-2'>色数制限</span>
+              <label>
+                <input
+                  type="radio"
+                  name="colorNum"
+                  value="2"
+                  onChange={handleRadioChange}
+                />
+                2
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="colorNum"
+                  value="4"
+                  onChange={handleRadioChange}
+                />
+                4
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="colorNum"
+                  value="8"
+                  onChange={handleRadioChange}
+                  defaultChecked
+                />
+                8
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="colorNum"
+                  value="16"
+                  onChange={handleRadioChange}
+                />
+                16
+              </label>
+            </div>
+          </div>
+          <div className='flex justify-center'>
+            <div className='space-x-2'>
+              <span className='pr-2'>圧縮</span>
+              <label>
+                <input
+                  type="radio"
+                  name="compression"
+                  value="true"
+                  onChange={handleCompressChange}
+                />
+                する
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="compression"
+                  value="false"
+                  onChange={handleCompressChange}
+                  defaultChecked
+                />
+                しない
+              </label>
+            </div>
           </div>
         </div>
-        <div className='flex justify-center'>
-          <div className='space-x-2'>
-            <span className='pr-2'>圧縮</span>
-            <label>
-              <input
-                type="radio"
-                name="compression"
-                value="true"
-                onChange={handleCompressChange}
-              />
-              する
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="compression"
-                value="false"
-                onChange={handleCompressChange}
-                defaultChecked
-              />
-              しない
-            </label>
-          </div>
-        </div>
-      </div>
 
-      {/*プレビュー*/}
-      <div className='flex justify-center w-full outline'>
-        {previewUrl && (
-          <div>
-            <h2>Preview</h2>
-            <div className="relative w-1/3 mx-auto overflow-hidden">
+        {/*プレビュー*/}
+        <div className='justify-center w-[75%] h-full bg-sky-200'>
+          <div className='w-full h-[5%] justify-center flex'>Preview</div>
+          {previewUrl && (
+            <div className="flex justify-center items-center w-full h-[90%] overflow-hidden">
               <img
                 src={previewUrl}
                 alt="Selected Preview"
-                className="w-full h-auto rounded shadow object-contain"
+                className={`w-full h-[85%] object-contain pointer-none ${isProcessing ? "brightness-50" : "brightness-100"}`}
               />
+              {isProcessing && <ClipLoader color="#36d7b7" size={50} className='fixed' />}
             </div>
-            {isProcessed && (
-              <a href={previewUrl} download="processed-image.png">
-                ダウンロード
-              </a>
-            )}
-          </div>
+          )}
 
-        )}
+          {isProcessed && (
+            <div className='justify-center flex w-full h-[5%]'><a href={previewUrl} download="processed-image.png">
+              ダウンロード
+            </a></div>
+          )}
+
+        </div>
+      </div>
+
+      <div className='flex justify-center'>
+
       </div>
 
       <footer className="fixed text-sm sm:text-base text-slate-500 z-10 bottom-0 w-full">
-          <div className='flex text-center items-center justify-center'>
-            <span className="hover:border rounded px-1 text-black">&copy; 2024 Kaiu Tomozawa. All Rights Reserved</span>
-          </div>
-        </footer>
+        <div className='flex text-center items-center justify-center'>
+          <span className="hover:border rounded px-1 text-black">&copy; 2024 Kaiu Tomozawa. All Rights Reserved</span>
+        </div>
+      </footer>
     </main>
   );
 }

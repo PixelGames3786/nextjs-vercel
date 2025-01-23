@@ -15,6 +15,7 @@ import WorkDetailPortfolio from "@/components/WorkDetail/workdetailPortfolio";
 import WorkDetailMetalFrontier from "@/components/WorkDetail/workdetailMetalFrontier";
 import WorkDetailNagarator from "@/components/WorkDetail/workdetailNagarator";
 import WorkDetailImagetuner from "@/components/WorkDetail/workdetailImageTuner";
+import WorkDetailTest from "@/components/WorkDetail/workdetailTest";
 
 import { Button } from "@/components/ui/button"
 import BackToTopButton from "@/components/backToTopButton";
@@ -37,10 +38,12 @@ export default function Home() {
   const [selectTag, setselectTag] = useState(0);
   const [selectWait, setSelectWait] = useState(false);
   const [showBackButton, setShowBackButton] = useState(false);
+  const [isShowWork,setIsShowWork]=useState(false);
 
   //作品ボタンが押された際に、詳細を表示する
   const handleClick = (num: number) => {
 
+    setIsShowWork(true);
     if (selectWait) return;
 
     setSelectWait(true);
@@ -74,6 +77,11 @@ export default function Home() {
     setShowBackButton(scrollPosition > threshold);
   };
 
+  //説明を非表示に
+  const closeWorkDetail=()=>{
+    setIsShowWork(false);
+  }
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // 初期表示のため
@@ -82,7 +90,7 @@ export default function Home() {
   return (
     <div>
       <Analytics />
-      <main className="flex min-h-screen flex-col bg-slate-200">
+      <main className="relative bg-slate-200">
         <motion.header
           className="bg-slate-800 shadow w-full text-white h-20 items-center"
           initial={{ y: -100, opacity: 0 }}
@@ -103,7 +111,7 @@ export default function Home() {
         <div className="h-14 md:h-28 w-full">
         </div>
 
-
+        {/* 自己紹介 */}
         <AnimatedSection>
           <div
             className="w-full h-full pl-10 md:pl-20 pb-8 md:pb-10 items-start font-mono text-4xl md:text-6xl select-none"
@@ -146,6 +154,7 @@ export default function Home() {
           </div>
         </AnimatedSection>
 
+        {/*Works選択*/}
         <AnimatedSection>
           <div className="pb-16">
             <div className="flex space-x-2 md:space-x-5 pb-3 items-center justify-center h-full">
@@ -180,6 +189,14 @@ export default function Home() {
           </div>
         </AnimatedSection>
 
+        {/* Works説明 
+        <div className={`fixed top-0 left-0 w-full h-full bg-red-300 origin-right ${isShowWork ? "scale-x-100 duration-80":"scale-x-0 duration-100"}`}></div>
+        <div className={`fixed top-0 left-0 w-full h-full bg-slate-800 origin-right ${isShowWork ? "scale-x-100 duration-100":"scale-x-0 duration-80"}`}>
+          テスト
+          <button onClick={closeWorkDetail}>閉じる</button>
+        </div>*/}
+        
+        {/* Works詳細 */}
         <AnimatePresence>
           {selectTag === 1 && <WorkDetailRogue key="workDetailRogue"/>}
           {selectTag === 2 && <WorkDetailParadise key="workDetailParadise" />}
