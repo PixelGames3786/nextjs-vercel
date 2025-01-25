@@ -33,6 +33,9 @@ export async function POST(req: Request) {
     //色反転するなら
     if(Setting.invert) jimpImage.invert();
 
+    //モノクロにするなら
+    if(Setting.grayScale) jimpImage.greyscale();
+
     const promise = await jimpImage.getBuffer('image/png');
     buffer = promise;
 

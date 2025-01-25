@@ -11,6 +11,7 @@ export interface TuneSetting {
   reduceColorNum: number,
   compressionNum: number,
   invert: boolean,
+  grayScale:boolean,
 }
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
     reduceColorNum: 8,
     compressionNum: 2,
     invert: false,
+    grayScale:false,
   });
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -53,6 +55,12 @@ export default function Home() {
     setTuneSetting(newSetting);
   };
 
+  const handleGrayScaleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newSetting = tuneSetting;
+    tuneSetting.grayScale = event.target.value.toLowerCase() === "true";
+    setTuneSetting(newSetting);
+  };
+
   const handleUpload = async () => {
     if (isProcessing) return;
     if (!selectedFile) return alert('画像を選択してください');
@@ -64,7 +72,7 @@ export default function Home() {
     formData.append('tuneSetting', JSON.stringify(tuneSetting));
 
     try {
-      const response = await fetch('/api/upload', {
+      const response = await fetch('/api/imageupload', {
         method: 'POST',
         body: formData,
       });
@@ -293,6 +301,37 @@ export default function Home() {
               </label>
             </span>
           </div>
+          {/*グレスケ*/}
+          <div className='flex space-x-2 mx-6 justify-center'>
+            <span className='w-[30%] flex items-center'>モノクロ</span>
+            <span className='w-[70%] flex items-center justify-center space-x-1'>
+              <label>
+                <input
+                  type="radio"
+                  name="grayScale"
+                  value="true"
+                  onChange={handleGrayScaleChange}
+                  className='hidden peer'
+                />
+                <div
+                  className="caret-transparent w-16 h-8 border-2 border-blue-500 rounded-md flex items-center justify-center peer-checked:bg-rose-400 peer-checked:border-transparent"
+                >する</div>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="grayScale"
+                  value="false"
+                  onChange={handleGrayScaleChange}
+                  defaultChecked
+                  className='hidden peer'
+                />
+                <div
+                  className="caret-transparent w-16 h-8 border-2 border-blue-500 rounded-md flex items-center justify-center peer-checked:bg-rose-400 peer-checked:border-transparent"
+                >しない</div>
+              </label>
+            </span>
+          </div>
         </div>
 
         {/*プレビュー*/}
@@ -314,7 +353,7 @@ export default function Home() {
               まずは上部にあるアップロードフォームから画像をアップロードしよう！<br/>
               その後、左側の設定で処理設定を行い、処理ボタンを押して待てば出来上がり！<br/>
               あまり大きなサイズの画像だと処理に時間がかかってタイムアウトになったりするので、そこそこのサイズがおすすめ<br/>
-              （1000*1000以下くらいがおすすめ）
+              （1000*1000ピクセル以下くらいがおすすめ）
             </div>
           )}
 
