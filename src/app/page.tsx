@@ -226,7 +226,7 @@ export default function Home() {
         </AnimatedSection>
 
         <footer className="text-center text-sm md:text-base select-none">
-          <p>&copy; 2024 Kaiu Tomozawa. All Rights Reserved</p>
+          <p>&copy; 2024-2025 Kaiu Tomozawa. All Rights Reserved</p>
         </footer>
       </main>
     </div>

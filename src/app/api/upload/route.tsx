@@ -25,14 +25,22 @@ export async function POST(req: Request) {
 
     //jimpで減色
     const jimpImage = await Jimp.Jimp.read(buffer);
-    jimpImage.quantize({ colors: Setting.reduceColorNum });
+
+    if(Setting.reduceColorNum!=0) jimpImage.quantize({ colors: Setting.reduceColorNum });
+    
+    //jimpImage.posterize(Setting.reduceColorNum);
+
+    //色反転するなら
+    if(Setting.invert) jimpImage.invert();
 
     const promise = await jimpImage.getBuffer('image/png');
     buffer = promise;
 
     //圧縮するなら
-    if (Setting.compression) {
-      const newWidth = Math.round(jimpImage.bitmap.width * 0.2);
+    if (Setting.compressionNum!=0) {
+      const compressRatio=1/Setting.compressionNum;
+
+      const newWidth = Math.round(jimpImage.bitmap.width * compressRatio);
       const newHeight = Math.round(jimpImage.bitmap.height * (newWidth / jimpImage.bitmap.width));
       buffer = await sharp(buffer)
         .resize(newWidth, newHeight)

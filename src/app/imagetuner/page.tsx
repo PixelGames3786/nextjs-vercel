@@ -9,7 +9,8 @@ import { settings } from 'firebase/analytics';
 
 export interface TuneSetting {
   reduceColorNum: number,
-  compression: boolean,
+  compressionNum: number,
+  invert: boolean,
 }
 
 export default function Home() {
@@ -18,8 +19,9 @@ export default function Home() {
   const [isProcessing, setIsProcessing] = useState<boolean>(false);
   const [isProcessed, setIsProcessed] = useState<boolean>(false);
   const [tuneSetting, setTuneSetting] = useState<TuneSetting>({
-    reduceColorNum: 8, // 初期値を設定
-    compression: false,
+    reduceColorNum: 8,
+    compressionNum: 2,
+    invert: false,
   });
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,7 +33,7 @@ export default function Home() {
     }
   };
 
-  const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleReduceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newSetting = tuneSetting;
     const newReduceColorNum = parseInt(event.target.value);
     tuneSetting.reduceColorNum = newReduceColorNum;
@@ -40,7 +42,14 @@ export default function Home() {
 
   const handleCompressChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newSetting = tuneSetting;
-    tuneSetting.compression = event.target.value.toLowerCase() === "true";
+    const newCompressNum = parseInt(event.target.value);
+    tuneSetting.compressionNum = newCompressNum;
+    setTuneSetting(newSetting);
+  };
+
+  const handleInvertChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newSetting = tuneSetting;
+    tuneSetting.invert = event.target.value.toLowerCase() === "true";
     setTuneSetting(newSetting);
   };
 
@@ -87,7 +96,7 @@ export default function Home() {
       <header className="w-full h-20 items-center z-10 pointer-events-none bg-sky-500">
         <div className="flex mx-auto h-full px-3 sm:px-8 text-base sm:text-xl">
           <span className="flex-grow text-center flex items-center justify-center">
-            <div className="hover:border pointer-events-auto rounded px-1 text-black">ImageTuner</div>
+            <div className="caret-transparent rounded px-1 text-black">ImageTuner</div>
           </span>
         </div>
       </header>
@@ -119,80 +128,179 @@ export default function Home() {
 
       <div className='w-full h-[500px] flex'>
         {/*設定*/}
-        <div className='w-[25%] h-full bg-[#1D6CB1] py-3'>
+        <div className='w-[25%] h-full bg-[#1D6CB1] py-3 space-y-2'>
           <div className='flex w-full justify-center'>設定</div>
-          <div className='flex justify-center'>
-            <div className='space-x-2'>
-              <span className='pr-2'>色数制限</span>
+          {/*色数制限*/}
+          <div className='flex space-x-2 mx-6 justify-center'>
+            <div className='flex w-[30%] items-center'>色数制限</div>
+            <div className='flex w-[70%] items-center justify-center space-x-1'>
               <label>
                 <input
                   type="radio"
                   name="colorNum"
                   value="2"
-                  onChange={handleRadioChange}
+                  onChange={handleReduceChange}
+                  className="hidden peer"
                 />
-                2
+                <div className="caret-transparent w-8 h-8 border-2 border-blue-500 rounded-md flex items-center justify-center peer-checked:bg-rose-400 peer-checked:border-transparent"
+                >2</div>
               </label>
               <label>
                 <input
                   type="radio"
                   name="colorNum"
                   value="4"
-                  onChange={handleRadioChange}
+                  onChange={handleReduceChange}
+                  className="hidden peer"
                 />
-                4
+                <div
+                  className="caret-transparent w-8 h-8 border-2 border-blue-500 rounded-md flex items-center justify-center peer-checked:bg-rose-400 peer-checked:border-transparent"
+                >4</div>
               </label>
               <label>
                 <input
                   type="radio"
                   name="colorNum"
                   value="8"
-                  onChange={handleRadioChange}
+                  onChange={handleReduceChange}
                   defaultChecked
+                  className="hidden peer"
                 />
-                8
+                <div
+                  className="caret-transparent w-8 h-8 border-2 border-blue-500 rounded-md flex items-center justify-center peer-checked:bg-rose-400 peer-checked:border-transparent"
+                >8</div>
               </label>
               <label>
                 <input
                   type="radio"
                   name="colorNum"
                   value="16"
-                  onChange={handleRadioChange}
+                  onChange={handleReduceChange}
+                  className="hidden peer"
                 />
-                16
+                <div
+                  className="caret-transparent w-8 h-8 border-2 border-blue-500 rounded-md flex items-center justify-center peer-checked:bg-rose-400 peer-checked:border-transparent"
+                >16</div>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="colorNum"
+                  value="0"
+                  onChange={handleReduceChange}
+                  className="hidden peer"
+                />
+                <div
+                  className="caret-transparent w-12 h-8 border-2 border-blue-500 rounded-md flex items-center justify-center peer-checked:bg-rose-400 peer-checked:border-transparent"
+                >なし</div>
               </label>
             </div>
           </div>
-          <div className='flex justify-center'>
-            <div className='space-x-2'>
-              <span className='pr-2'>圧縮</span>
+          {/*圧縮*/}
+          <div className='flex space-x-2 mx-6 justify-center'>
+            <span className='w-[30%] flex items-center'>圧縮</span>
+            <span className='w-[70%] flex items-center justify-center space-x-1'>
               <label>
                 <input
                   type="radio"
-                  name="compression"
-                  value="true"
+                  name="compressNum"
+                  value="2"
                   onChange={handleCompressChange}
+                  className="hidden peer"
                 />
-                する
+                <div className="caret-transparent w-8 h-8 border-2 border-blue-500 rounded-md flex items-center justify-center peer-checked:bg-rose-400 peer-checked:border-transparent"
+                >2</div>
               </label>
               <label>
                 <input
                   type="radio"
-                  name="compression"
-                  value="false"
+                  name="compressNum"
+                  value="4"
+                  onChange={handleCompressChange}
+                  className="hidden peer"
+                />
+                <div
+                  className="caret-transparent w-8 h-8 border-2 border-blue-500 rounded-md flex items-center justify-center peer-checked:bg-rose-400 peer-checked:border-transparent"
+                >4</div>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="compressNum"
+                  value="8"
                   onChange={handleCompressChange}
                   defaultChecked
+                  className="hidden peer"
                 />
-                しない
+                <div
+                  className="caret-transparent w-8 h-8 border-2 border-blue-500 rounded-md flex items-center justify-center peer-checked:bg-rose-400 peer-checked:border-transparent"
+                >8</div>
               </label>
-            </div>
+              <label>
+                <input
+                  type="radio"
+                  name="compressNum"
+                  value="16"
+                  onChange={handleCompressChange}
+                  className="hidden peer"
+                />
+                <div
+                  className="caret-transparent w-8 h-8 border-2 border-blue-500 rounded-md flex items-center justify-center peer-checked:bg-rose-400 peer-checked:border-transparent"
+                >16</div>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="compressNum"
+                  value="0"
+                  onChange={handleCompressChange}
+                  className="hidden peer"
+                />
+                <div
+                  className="caret-transparent w-12 h-8 border-2 border-blue-500 rounded-md flex items-center justify-center peer-checked:bg-rose-400 peer-checked:border-transparent"
+                >なし</div>
+              </label>
+            </span>
+          </div>
+          {/*反転*/}
+          <div className='flex space-x-2 mx-6 justify-center'>
+            <span className='w-[30%] flex items-center'>色反転</span>
+            <span className='w-[70%] flex items-center justify-center space-x-1'>
+              <label>
+                <input
+                  type="radio"
+                  name="invert"
+                  value="true"
+                  onChange={handleInvertChange}
+                  className='hidden peer'
+                />
+                <div
+                  className="caret-transparent w-16 h-8 border-2 border-blue-500 rounded-md flex items-center justify-center peer-checked:bg-rose-400 peer-checked:border-transparent"
+                >する</div>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="invert"
+                  value="false"
+                  onChange={handleInvertChange}
+                  defaultChecked
+                  className='hidden peer'
+                />
+                <div
+                  className="caret-transparent w-16 h-8 border-2 border-blue-500 rounded-md flex items-center justify-center peer-checked:bg-rose-400 peer-checked:border-transparent"
+                >しない</div>
+              </label>
+            </span>
           </div>
         </div>
 
         {/*プレビュー*/}
         <div className='justify-center w-[75%] h-full bg-sky-200'>
-          <div className='w-full h-[5%] justify-center flex'>Preview</div>
-          {previewUrl && (
+          <div className='w-full h-[5%] justify-center flex'>
+            {previewUrl ? 'Preview' : '使い方'}
+          </div>
+          {previewUrl ? (
             <div className="flex justify-center items-center w-full h-[90%] overflow-hidden">
               <img
                 src={previewUrl}
@@ -200,6 +308,13 @@ export default function Home() {
                 className={`w-full h-[85%] object-contain pointer-none ${isProcessing ? "brightness-50" : "brightness-100"}`}
               />
               {isProcessing && <ClipLoader color="#36d7b7" size={50} className='fixed' />}
+            </div>
+          ) : (
+            <div className="flex justify-center items-center w-full h-[90%] overflow-hidden">
+              まずは上部にあるアップロードフォームから画像をアップロードしよう！<br/>
+              その後、左側の設定で処理設定を行い、処理ボタンを押して待てば出来上がり！<br/>
+              あまり大きなサイズの画像だと処理に時間がかかってタイムアウトになったりするので、そこそこのサイズがおすすめ<br/>
+              （1000*1000以下くらいがおすすめ）
             </div>
           )}
 
@@ -218,7 +333,7 @@ export default function Home() {
 
       <footer className="fixed text-sm sm:text-base text-slate-500 z-10 bottom-0 w-full">
         <div className='flex text-center items-center justify-center'>
-          <span className="hover:border rounded px-1 text-black">&copy; 2024 Kaiu Tomozawa. All Rights Reserved</span>
+          <span className="px-1 text-black">&copy; 2024-2025 Kaiu Tomozawa. All Rights Reserved</span>
         </div>
       </footer>
     </main>

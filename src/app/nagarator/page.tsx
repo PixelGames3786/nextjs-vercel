@@ -214,7 +214,7 @@ export default function Home() {
         </div>
         <footer className="fixed text-sm sm:text-base text-slate-500 z-10 bottom-0 w-full">
           <div className='flex text-center items-center justify-center'>
-            <span className={`hover:border rounded px-1 ${isLightMode ? "border-black":"border-white"}`}>&copy; 2024 Kaiu Tomozawa. All Rights Reserved</span>
+            <span className={`hover:border rounded px-1 ${isLightMode ? "border-black":"border-white"}`}>&copy; 2024-2025 Kaiu Tomozawa. All Rights Reserved</span>
           </div>
         </footer>
       </main>
